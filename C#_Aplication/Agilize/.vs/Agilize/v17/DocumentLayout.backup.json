@@ -1,0 +1,140 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|c:\\users\\helio\\documents\\github\\agilize_project\\agilize_project\\c#_aplication\\agilize\\mainhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|solutionrelative:mainhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|c:\\users\\helio\\documents\\github\\agilize_project\\agilize_project\\c#_aplication\\agilize\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|c:\\users\\helio\\documents\\github\\agilize_project\\agilize_project\\c#_aplication\\agilize\\mainhub.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|solutionrelative:mainhub.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|c:\\users\\helio\\documents\\github\\agilize_project\\agilize_project\\c#_aplication\\agilize\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|solutionrelative:signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|c:\\users\\helio\\documents\\github\\agilize_project\\agilize_project\\c#_aplication\\agilize\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|solutionrelative:signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|c:\\users\\helio\\documents\\github\\agilize_project\\agilize_project\\c#_aplication\\agilize\\mainhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|solutionrelative:mainhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|c:\\users\\helio\\documents\\github\\agilize_project\\agilize_project\\c#_aplication\\agilize\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FA24A2D-DF10-4BC7-BD59-1D6869BA1712}|Agilize.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 126,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainHub.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\MainHub.Designer.cs",
+              "RelativeDocumentMoniker": "MainHub.Designer.cs",
+              "ToolTip": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\MainHub.Designer.cs",
+              "RelativeToolTip": "MainHub.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T17:37:13.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainHub.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\MainHub.cs",
+              "RelativeDocumentMoniker": "MainHub.cs",
+              "ToolTip": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\MainHub.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MainHub.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T15:20:21.709Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SignUp.cs",
+              "DocumentMoniker": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\SignUp.cs",
+              "RelativeDocumentMoniker": "SignUp.cs",
+              "ToolTip": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\SignUp.cs*",
+              "RelativeToolTip": "SignUp.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAADgvyEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T15:24:15.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SignUp.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\SignUp.cs",
+              "RelativeDocumentMoniker": "SignUp.cs",
+              "ToolTip": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\SignUp.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "SignUp.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T15:24:12.778Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainHub.cs",
+              "DocumentMoniker": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\MainHub.cs",
+              "RelativeDocumentMoniker": "MainHub.cs",
+              "ToolTip": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\MainHub.cs",
+              "RelativeToolTip": "MainHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T15:22:49.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\Login.cs",
+              "RelativeDocumentMoniker": "Login.cs",
+              "ToolTip": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\Login.cs",
+              "RelativeToolTip": "Login.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAewCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T14:25:26.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\Login.cs",
+              "RelativeDocumentMoniker": "Login.cs",
+              "ToolTip": "C:\\Users\\helio\\Documents\\GitHub\\Agilize_Project\\Agilize_Project\\C#_Aplication\\Agilize\\Login.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Login.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T14:23:05.332Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
