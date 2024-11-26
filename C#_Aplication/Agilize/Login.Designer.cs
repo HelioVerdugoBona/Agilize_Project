@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.LoginBox = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.LblPaswordForgot = new System.Windows.Forms.LinkLabel();
             this.singUpLbl = new System.Windows.Forms.LinkLabel();
             this.DonAcount = new System.Windows.Forms.Label();
             this.paswordTxTBox = new System.Windows.Forms.TextBox();
             this.usernameTxTBox = new System.Windows.Forms.TextBox();
             this.LoginBtn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LoginBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -57,15 +57,6 @@
             this.LoginBox.Size = new System.Drawing.Size(643, 765);
             this.LoginBox.TabIndex = 1;
             this.LoginBox.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Agilize.Properties.Resources.Icon;
-            this.pictureBox2.Location = new System.Drawing.Point(270, 67);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 103);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
             // 
             // LblPaswordForgot
             // 
@@ -147,6 +138,15 @@
             this.LoginBtn.Text = "Login";
             this.LoginBtn.UseVisualStyleBackColor = false;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Agilize.Properties.Resources.Icon;
+            this.pictureBox2.Location = new System.Drawing.Point(270, 67);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 103);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 

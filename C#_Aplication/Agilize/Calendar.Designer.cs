@@ -1,6 +1,6 @@
 ﻿namespace Agilize
 {
-    partial class Project
+    partial class Calendar
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             this.acountLBL = new System.Windows.Forms.LinkLabel();
             this.projectFoldersLBL = new System.Windows.Forms.LinkLabel();
             this.calendarLBL = new System.Windows.Forms.LinkLabel();
-            this.manageMembersLBL = new System.Windows.Forms.LinkLabel();
+            this.newProjectLBL = new System.Windows.Forms.LinkLabel();
             this.homeLBL = new System.Windows.Forms.LinkLabel();
             this.settingsIMG = new System.Windows.Forms.PictureBox();
             this.separatorLine2 = new System.Windows.Forms.PictureBox();
@@ -41,30 +41,20 @@
             this.separatorLine1 = new System.Windows.Forms.PictureBox();
             this.calendarIMG = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.manageMembersIMG = new System.Windows.Forms.PictureBox();
+            this.newProjectIMG = new System.Windows.Forms.PictureBox();
             this.projectFoldersIMG = new System.Windows.Forms.PictureBox();
             this.LblAcount = new System.Windows.Forms.Label();
             this.homeIMG = new System.Windows.Forms.PictureBox();
             this.LblMenu = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.projectNameLBL = new System.Windows.Forms.Label();
-            this.backLogLBL = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.listView4 = new System.Windows.Forms.ListView();
-            this.toDoLBL = new System.Windows.Forms.Label();
-            this.doingLBL = new System.Windows.Forms.Label();
-            this.pendingConfirmationLBL = new System.Windows.Forms.Label();
-            this.listView5 = new System.Windows.Forms.ListView();
-            this.doneLBL = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acountIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendarIMG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.manageMembersIMG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newProjectIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectFoldersIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -78,7 +68,7 @@
             this.Menu.Controls.Add(this.acountLBL);
             this.Menu.Controls.Add(this.projectFoldersLBL);
             this.Menu.Controls.Add(this.calendarLBL);
-            this.Menu.Controls.Add(this.manageMembersLBL);
+            this.Menu.Controls.Add(this.newProjectLBL);
             this.Menu.Controls.Add(this.homeLBL);
             this.Menu.Controls.Add(this.settingsIMG);
             this.Menu.Controls.Add(this.separatorLine2);
@@ -86,7 +76,7 @@
             this.Menu.Controls.Add(this.separatorLine1);
             this.Menu.Controls.Add(this.calendarIMG);
             this.Menu.Controls.Add(this.button1);
-            this.Menu.Controls.Add(this.manageMembersIMG);
+            this.Menu.Controls.Add(this.newProjectIMG);
             this.Menu.Controls.Add(this.projectFoldersIMG);
             this.Menu.Controls.Add(this.LblAcount);
             this.Menu.Controls.Add(this.homeIMG);
@@ -155,19 +145,19 @@
             this.calendarLBL.Text = "Calendar";
             this.calendarLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
             // 
-            // manageMembersLBL
+            // newProjectLBL
             // 
-            this.manageMembersLBL.AutoSize = true;
-            this.manageMembersLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.manageMembersLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageMembersLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.manageMembersLBL.Location = new System.Drawing.Point(64, 287);
-            this.manageMembersLBL.Name = "manageMembersLBL";
-            this.manageMembersLBL.Size = new System.Drawing.Size(164, 24);
-            this.manageMembersLBL.TabIndex = 14;
-            this.manageMembersLBL.TabStop = true;
-            this.manageMembersLBL.Text = "Manage Members";
-            this.manageMembersLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.newProjectLBL.AutoSize = true;
+            this.newProjectLBL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newProjectLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newProjectLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.newProjectLBL.Location = new System.Drawing.Point(64, 287);
+            this.newProjectLBL.Name = "newProjectLBL";
+            this.newProjectLBL.Size = new System.Drawing.Size(112, 24);
+            this.newProjectLBL.TabIndex = 14;
+            this.newProjectLBL.TabStop = true;
+            this.newProjectLBL.Text = "New Project";
+            this.newProjectLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
             // 
             // homeLBL
             // 
@@ -182,7 +172,6 @@
             this.homeLBL.TabStop = true;
             this.homeLBL.Text = "Home";
             this.homeLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.homeLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.homeLBL_LinkClicked);
             // 
             // settingsIMG
             // 
@@ -254,17 +243,16 @@
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // manageMembersIMG
+            // newProjectIMG
             // 
-            this.manageMembersIMG.BackgroundImage = global::Agilize.Properties.Resources.image;
-            this.manageMembersIMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.manageMembersIMG.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.manageMembersIMG.Location = new System.Drawing.Point(16, 277);
-            this.manageMembersIMG.Name = "manageMembersIMG";
-            this.manageMembersIMG.Size = new System.Drawing.Size(38, 34);
-            this.manageMembersIMG.TabIndex = 3;
-            this.manageMembersIMG.TabStop = false;
-            this.manageMembersIMG.Click += new System.EventHandler(this.newProjectIMG_Click);
+            this.newProjectIMG.BackgroundImage = global::Agilize.Properties.Resources.newProjectIMG1;
+            this.newProjectIMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.newProjectIMG.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newProjectIMG.Location = new System.Drawing.Point(16, 277);
+            this.newProjectIMG.Name = "newProjectIMG";
+            this.newProjectIMG.Size = new System.Drawing.Size(38, 34);
+            this.newProjectIMG.TabIndex = 3;
+            this.newProjectIMG.TabStop = false;
             // 
             // projectFoldersIMG
             // 
@@ -296,7 +284,6 @@
             this.homeIMG.Size = new System.Drawing.Size(38, 34);
             this.homeIMG.TabIndex = 1;
             this.homeIMG.TabStop = false;
-            this.homeIMG.Click += new System.EventHandler(this.homeIMG_Click);
             // 
             // LblMenu
             // 
@@ -316,154 +303,22 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
-            // projectNameLBL
+            // monthCalendar1
             // 
-            this.projectNameLBL.AutoSize = true;
-            this.projectNameLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(78)))), ((int)(((byte)(137)))));
-            this.projectNameLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectNameLBL.ForeColor = System.Drawing.Color.White;
-            this.projectNameLBL.Location = new System.Drawing.Point(326, 45);
-            this.projectNameLBL.Name = "projectNameLBL";
-            this.projectNameLBL.Size = new System.Drawing.Size(283, 51);
-            this.projectNameLBL.TabIndex = 2;
-            this.projectNameLBL.Text = "Project Name";
-            this.projectNameLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(4, 5);
+            this.monthCalendar1.Location = new System.Drawing.Point(312, 5);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 2;
             // 
-            // backLogLBL
-            // 
-            this.backLogLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(78)))), ((int)(((byte)(137)))));
-            this.backLogLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backLogLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backLogLBL.ForeColor = System.Drawing.Color.White;
-            this.backLogLBL.Location = new System.Drawing.Point(328, 131);
-            this.backLogLBL.Name = "backLogLBL";
-            this.backLogLBL.Size = new System.Drawing.Size(209, 26);
-            this.backLogLBL.TabIndex = 3;
-            this.backLogLBL.Text = "BackLog";
-            this.backLogLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.backLogLBL.Click += new System.EventHandler(this.backLogLBL_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(327, 131);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(210, 620);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView2
-            // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(558, 131);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(210, 620);
-            this.listView2.TabIndex = 5;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView3
-            // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(790, 131);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(210, 620);
-            this.listView3.TabIndex = 6;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView4
-            // 
-            this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(1023, 131);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(210, 620);
-            this.listView4.TabIndex = 7;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            // 
-            // toDoLBL
-            // 
-            this.toDoLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(78)))), ((int)(((byte)(137)))));
-            this.toDoLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.toDoLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toDoLBL.ForeColor = System.Drawing.Color.White;
-            this.toDoLBL.Location = new System.Drawing.Point(559, 131);
-            this.toDoLBL.Name = "toDoLBL";
-            this.toDoLBL.Size = new System.Drawing.Size(209, 26);
-            this.toDoLBL.TabIndex = 8;
-            this.toDoLBL.Text = "To Do";
-            this.toDoLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.toDoLBL.Click += new System.EventHandler(this.toDoLBL_Click);
-            // 
-            // doingLBL
-            // 
-            this.doingLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(78)))), ((int)(((byte)(137)))));
-            this.doingLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.doingLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doingLBL.ForeColor = System.Drawing.Color.White;
-            this.doingLBL.Location = new System.Drawing.Point(791, 131);
-            this.doingLBL.Name = "doingLBL";
-            this.doingLBL.Size = new System.Drawing.Size(209, 26);
-            this.doingLBL.TabIndex = 9;
-            this.doingLBL.Text = "Doing";
-            this.doingLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.doingLBL.Click += new System.EventHandler(this.doingLBL_Click);
-            // 
-            // pendingConfirmationLBL
-            // 
-            this.pendingConfirmationLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(78)))), ((int)(((byte)(137)))));
-            this.pendingConfirmationLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pendingConfirmationLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pendingConfirmationLBL.ForeColor = System.Drawing.Color.White;
-            this.pendingConfirmationLBL.Location = new System.Drawing.Point(1023, 131);
-            this.pendingConfirmationLBL.Name = "pendingConfirmationLBL";
-            this.pendingConfirmationLBL.Size = new System.Drawing.Size(209, 26);
-            this.pendingConfirmationLBL.TabIndex = 10;
-            this.pendingConfirmationLBL.Text = "Pending Confirmation";
-            this.pendingConfirmationLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.pendingConfirmationLBL.Click += new System.EventHandler(this.pendingConfirmationLBL_Click);
-            // 
-            // listView5
-            // 
-            this.listView5.HideSelection = false;
-            this.listView5.Location = new System.Drawing.Point(1255, 131);
-            this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(210, 620);
-            this.listView5.TabIndex = 11;
-            this.listView5.UseCompatibleStateImageBehavior = false;
-            // 
-            // doneLBL
-            // 
-            this.doneLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(78)))), ((int)(((byte)(137)))));
-            this.doneLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.doneLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doneLBL.ForeColor = System.Drawing.Color.White;
-            this.doneLBL.Location = new System.Drawing.Point(1256, 131);
-            this.doneLBL.Name = "doneLBL";
-            this.doneLBL.Size = new System.Drawing.Size(209, 26);
-            this.doneLBL.TabIndex = 12;
-            this.doneLBL.Text = "Done";
-            this.doneLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.doneLBL.Click += new System.EventHandler(this.doneLBL_Click);
-            // 
-            // Project
+            // Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
-            this.ClientSize = new System.Drawing.Size(1484, 761);
-            this.Controls.Add(this.doneLBL);
-            this.Controls.Add(this.listView5);
-            this.Controls.Add(this.pendingConfirmationLBL);
-            this.Controls.Add(this.doingLBL);
-            this.Controls.Add(this.toDoLBL);
-            this.Controls.Add(this.listView4);
-            this.Controls.Add(this.listView3);
-            this.Controls.Add(this.backLogLBL);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.projectNameLBL);
+            this.ClientSize = new System.Drawing.Size(1094, 761);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.Menu);
-            this.Name = "Project";
-            this.Text = "Project";
+            this.Name = "Calendar";
+            this.Text = "Calendar";
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).EndInit();
@@ -471,12 +326,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.acountIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendarIMG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.manageMembersIMG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newProjectIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectFoldersIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -487,7 +341,7 @@
         private System.Windows.Forms.LinkLabel acountLBL;
         private System.Windows.Forms.LinkLabel projectFoldersLBL;
         private System.Windows.Forms.LinkLabel calendarLBL;
-        private System.Windows.Forms.LinkLabel manageMembersLBL;
+        private System.Windows.Forms.LinkLabel newProjectLBL;
         private System.Windows.Forms.LinkLabel homeLBL;
         private System.Windows.Forms.PictureBox settingsIMG;
         private System.Windows.Forms.PictureBox separatorLine2;
@@ -495,22 +349,12 @@
         private System.Windows.Forms.PictureBox separatorLine1;
         private System.Windows.Forms.PictureBox calendarIMG;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox manageMembersIMG;
+        private System.Windows.Forms.PictureBox newProjectIMG;
         private System.Windows.Forms.PictureBox projectFoldersIMG;
         private System.Windows.Forms.Label LblAcount;
         private System.Windows.Forms.PictureBox homeIMG;
         private System.Windows.Forms.Label LblMenu;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label projectNameLBL;
-        private System.Windows.Forms.Label backLogLBL;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.ListView listView4;
-        private System.Windows.Forms.Label toDoLBL;
-        private System.Windows.Forms.Label doingLBL;
-        private System.Windows.Forms.Label pendingConfirmationLBL;
-        private System.Windows.Forms.ListView listView5;
-        private System.Windows.Forms.Label doneLBL;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

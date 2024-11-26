@@ -33,5 +33,49 @@ namespace Agilize
         {
 
         }
+
+        private void homeLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MainHub mainHub = new MainHub();
+            mainHub.Show();
+            this.Close();
+        }
+
+        private void homeIMG_Click(object sender, EventArgs e)
+        {
+            MainHub mainHub = new MainHub();
+            mainHub.Show();
+            this.Close();
+        }
+
+        private void backLogLBL_Click(object sender, EventArgs e)
+        {
+            Task task = new Task();
+            task.ShowDialog();
+        }
+
+        private void toDoLBL_Click(object sender, EventArgs e)
+        {
+            Task task = new Task();
+            task.ShowDialog();
+        }
+
+        private void doingLBL_Click(object sender, EventArgs e)
+        {
+            Task task = new Task();
+            task.ShowDialog();
+        }
+
+        private void pendingConfirmationLBL_Click(object sender, EventArgs e)
+        {
+            Task task = new Task();
+            task.ShowDialog();
+        }
+
+        private void doneLBL_Click(object sender, EventArgs e)
+        {
+            Task task = new Task();
+            task.ShowDialog();
+        }
     }
 }
