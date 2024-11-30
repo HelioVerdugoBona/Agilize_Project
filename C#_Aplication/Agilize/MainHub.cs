@@ -12,10 +12,22 @@ namespace Agilize
 {
     public partial class MainHub : Form
     {
-        public MainHub()
+       
+        Users user;
+        String pathToProjectFiles;
+        public MainHub(Users user, String pathToProjectFiles)
         {
             InitializeComponent();
             SetAllLbls();
+            this.user = user;
+            this.pathToProjectFiles = pathToProjectFiles;
+        }
+
+        public MainHub(Users user)
+        {
+            InitializeComponent();
+            SetAllLbls();
+            this.user = user;
         }
 
         private void SetAllLbls()
@@ -28,38 +40,87 @@ namespace Agilize
             SettingLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
         }
 
-
-        private void Menu_Enter(object sender, EventArgs e)
+        private void homeLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            MainHub mainHub = new MainHub(user, pathToProjectFiles);
+            mainHub.Show();
+            this.Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void homeIMG_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void acountIMG_Click(object sender, EventArgs e)
-        {
-
+            MainHub mainHub = new MainHub(user, pathToProjectFiles);
+            mainHub.Show();
+            this.Close();
         }
 
         private void newProjectLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Project project = new Project();
-            project.Show();
+            NewProject newProject = new NewProject(user, pathToProjectFiles);
+            newProject.Show();
             this.Close();
         }
 
         private void newProjectIMG_Click(object sender, EventArgs e)
         {
-            Project project = new Project();
-            project.Show();
+            NewProject newProject = new NewProject(user, pathToProjectFiles);
+            newProject.Show();
+            this.Close();
+        }
+
+        private void calendarLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Calendar calendar = new Calendar(user, pathToProjectFiles);
+            calendar.Show();
+            this.Close();
+        }
+
+        private void calendarIMG_Click(object sender, EventArgs e)
+        {
+            Calendar calendar = new Calendar(user, pathToProjectFiles);
+            calendar.Show();
+            this.Close();
+        }
+
+        private void projectFoldersLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProjectFolders projectFolders = new ProjectFolders(user, pathToProjectFiles);
+            projectFolders.Show();
+            this.Close();
+        }
+
+        private void projectFoldersIMG_Click(object sender, EventArgs e)
+        {
+            ProjectFolders projectFolders = new ProjectFolders(user, pathToProjectFiles);
+            projectFolders.Show();
+            this.Close();
+        }
+
+        private void acountLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Acount acount = new Acount(user, pathToProjectFiles);
+            acount.Show();
+            this.Close();
+        }
+
+        private void acountIMG_Click(object sender, EventArgs e)
+        {
+            Acount acount = new Acount(user, pathToProjectFiles);
+            acount.Show();
+            this.Close();
+        }
+
+        private void SettingLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Settings settings = new Settings(user, pathToProjectFiles);
+            settings.Show();
+            this.Close();
+        }
+
+        private void settingsIMG_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings(user, pathToProjectFiles);
+            settings.Show();
             this.Close();
         }
 

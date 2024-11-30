@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.LoginBox = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.LblPaswordForgot = new System.Windows.Forms.LinkLabel();
             this.singUpLbl = new System.Windows.Forms.LinkLabel();
             this.DonAcount = new System.Windows.Forms.Label();
             this.paswordTxTBox = new System.Windows.Forms.TextBox();
             this.usernameTxTBox = new System.Windows.Forms.TextBox();
             this.LoginBtn = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LoginBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -57,6 +58,15 @@
             this.LoginBox.Size = new System.Drawing.Size(643, 765);
             this.LoginBox.TabIndex = 1;
             this.LoginBox.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(270, 67);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 103);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // LblPaswordForgot
             // 
@@ -119,7 +129,7 @@
             this.usernameTxTBox.Name = "usernameTxTBox";
             this.usernameTxTBox.Size = new System.Drawing.Size(611, 51);
             this.usernameTxTBox.TabIndex = 1;
-            this.usernameTxTBox.Text = "Username or Email";
+            this.usernameTxTBox.Text = "Nickname";
             this.usernameTxTBox.Enter += new System.EventHandler(this.usernameTxTBox_Enter);
             this.usernameTxTBox.Leave += new System.EventHandler(this.usernameTxTBox_Leave);
             // 
@@ -139,18 +149,9 @@
             this.LoginBtn.UseVisualStyleBackColor = false;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Agilize.Properties.Resources.Icon;
-            this.pictureBox2.Location = new System.Drawing.Point(270, 67);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 103);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Agilize.Properties.Resources.TeamWork_1;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(1, 0);
             this.pictureBox1.Name = "pictureBox1";

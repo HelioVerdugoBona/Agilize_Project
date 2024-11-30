@@ -1,22 +1,31 @@
-﻿using System;
+﻿
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Engines;
+using Org.BouncyCastle.Crypto.Paddings;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Utilities;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Agilize
 {
     public partial class SignUp : Form
     {
-        public SignUp()
+        Users newUser = new Users();
+        String pathToProjectFiles;
+        
+        String encryptingKey = "f83jsd74jdue0qnd";// Letras aleatoreas completamente
+
+        public SignUp(String pathToProjectFiles)
         {
             InitializeComponent();
             SetAll();
+            this.pathToProjectFiles = pathToProjectFiles;
         }
 
         private void SetAll()
@@ -25,19 +34,44 @@ namespace Agilize
 
         }
 
-        private void LoginBtn_Click(object sender, EventArgs e)
+        private void signUpBtn_Click(object sender, EventArgs e)
+        {
+            newUser.password = EncryptPassword(newUser.password);
+
+            if (ValidateNewUser())
+            {
+                if (!File.Exists(pathToProjectFiles))
+                {
+                    File.Create(pathToProjectFiles).Close(); // Crea y cierra el archivo
+                }
+
+                // Leer usuarios existentes del archivo JSON
+                List<Users> usersList = new List<Users>();
+                string jsonContent = File.ReadAllText(pathToProjectFiles);
+                if (!string.IsNullOrWhiteSpace(jsonContent))
+                {
+                    usersList = System.Text.Json.JsonSerializer.Deserialize<List<Users>>(jsonContent);
+                }
+
+                // Agregar el nuevo usuario a la lista
+                usersList.Add(newUser);
+
+                string newJsonContent = System.Text.Json.JsonSerializer.Serialize(usersList, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(pathToProjectFiles, newJsonContent);
+
+                MessageBox.Show("Usuario registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Por favor introduce parametros validos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoginLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-        }
-
-        private void SingUpLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Close();        
-        }
-
-        private void HaveAcount_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void nameTxtBox_Enter(object sender, EventArgs e)
@@ -55,6 +89,10 @@ namespace Agilize
             {
                 nameTxtBox.Text = "Name";
                 nameTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
+            }
+            else
+            {
+                newUser.name = nameTxtBox.Text;
             }
         }
 
@@ -74,6 +112,10 @@ namespace Agilize
                 surnamesTxtBox.Text = "Surnames";
                 surnamesTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
             }
+            else
+            {
+                newUser.surname = surnamesTxtBox.Text;
+            }
         }
 
         private void mailTxtBox_Enter(object sender, EventArgs e)
@@ -91,6 +133,10 @@ namespace Agilize
             {
                 mailTxtBox.Text = "Email";
                 mailTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
+            }
+            else
+            {
+                newUser.email = mailTxtBox.Text;
             }
         }
 
@@ -110,6 +156,10 @@ namespace Agilize
                 NicknameTxtBox.Text = "Nickname";
                 NicknameTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
             }
+            else
+            {
+                newUser.nickname = NicknameTxtBox.Text;
+            }
         }
 
         private void PaswordTxtBox_Enter(object sender, EventArgs e)
@@ -128,6 +178,36 @@ namespace Agilize
                 PaswordTxtBox.Text = "Password";
                 PaswordTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
             }
+            else
+            {
+                newUser.password = PaswordTxtBox.Text;
+            }
         }
+
+        private bool ValidateNewUser()
+        {
+            return !string.IsNullOrWhiteSpace(newUser.name) &&
+                   !string.IsNullOrWhiteSpace(newUser.surname) &&
+                   !string.IsNullOrWhiteSpace(newUser.email) &&
+                   !string.IsNullOrWhiteSpace(newUser.nickname) &&
+                   !string.IsNullOrWhiteSpace(newUser.password);
+        }
+
+        public string EncryptPassword(string pswd)
+        {
+            var engine = new BlowfishEngine();
+            var blockCipher = new PaddedBufferedBlockCipher(engine);
+            var keyBytes = Encoding.UTF8.GetBytes(encryptingKey);
+            blockCipher.Init(true, new KeyParameter(keyBytes));
+
+            var inputBytes = Encoding.UTF8.GetBytes(pswd);
+            var outputBytes = new byte[blockCipher.GetOutputSize(inputBytes.Length)];
+
+            var length = blockCipher.ProcessBytes(inputBytes, 0, inputBytes.Length, outputBytes, 0);
+            blockCipher.DoFinal(outputBytes, length);
+
+            return Convert.ToBase64String(outputBytes);
+        }
+
     }
 }

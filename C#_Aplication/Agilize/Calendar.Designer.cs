@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendar));
             this.Menu = new System.Windows.Forms.GroupBox();
             this.SettingLBL = new System.Windows.Forms.LinkLabel();
             this.acountLBL = new System.Windows.Forms.LinkLabel();
@@ -40,7 +41,6 @@
             this.acountIMG = new System.Windows.Forms.PictureBox();
             this.separatorLine1 = new System.Windows.Forms.PictureBox();
             this.calendarIMG = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.newProjectIMG = new System.Windows.Forms.PictureBox();
             this.projectFoldersIMG = new System.Windows.Forms.PictureBox();
             this.LblAcount = new System.Windows.Forms.Label();
@@ -48,6 +48,7 @@
             this.LblMenu = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).BeginInit();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectFoldersIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // Menu
@@ -75,13 +77,13 @@
             this.Menu.Controls.Add(this.acountIMG);
             this.Menu.Controls.Add(this.separatorLine1);
             this.Menu.Controls.Add(this.calendarIMG);
-            this.Menu.Controls.Add(this.button1);
             this.Menu.Controls.Add(this.newProjectIMG);
             this.Menu.Controls.Add(this.projectFoldersIMG);
             this.Menu.Controls.Add(this.LblAcount);
             this.Menu.Controls.Add(this.homeIMG);
             this.Menu.Controls.Add(this.LblMenu);
             this.Menu.Controls.Add(this.pictureBox2);
+            this.Menu.Controls.Add(this.pictureBox3);
             this.Menu.Location = new System.Drawing.Point(-1, 0);
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(312, 763);
@@ -102,6 +104,7 @@
             this.SettingLBL.TabStop = true;
             this.SettingLBL.Text = "Settings";
             this.SettingLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.SettingLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SettingLBL_LinkClicked);
             // 
             // acountLBL
             // 
@@ -116,6 +119,7 @@
             this.acountLBL.TabStop = true;
             this.acountLBL.Text = "Account";
             this.acountLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.acountLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.acountLBL_LinkClicked);
             // 
             // projectFoldersLBL
             // 
@@ -130,10 +134,12 @@
             this.projectFoldersLBL.TabStop = true;
             this.projectFoldersLBL.Text = "Projects Folders";
             this.projectFoldersLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.projectFoldersLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.projectFoldersLBL_LinkClicked);
             // 
             // calendarLBL
             // 
             this.calendarLBL.AutoSize = true;
+            this.calendarLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
             this.calendarLBL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.calendarLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calendarLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
@@ -144,6 +150,7 @@
             this.calendarLBL.TabStop = true;
             this.calendarLBL.Text = "Calendar";
             this.calendarLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.calendarLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.calendarLBL_LinkClicked);
             // 
             // newProjectLBL
             // 
@@ -158,6 +165,7 @@
             this.newProjectLBL.TabStop = true;
             this.newProjectLBL.Text = "New Project";
             this.newProjectLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.newProjectLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newProjectLBL_LinkClicked);
             // 
             // homeLBL
             // 
@@ -172,6 +180,7 @@
             this.homeLBL.TabStop = true;
             this.homeLBL.Text = "Home";
             this.homeLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.homeLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.homeLBL_LinkClicked);
             // 
             // settingsIMG
             // 
@@ -183,6 +192,7 @@
             this.settingsIMG.Size = new System.Drawing.Size(38, 34);
             this.settingsIMG.TabIndex = 6;
             this.settingsIMG.TabStop = false;
+            this.settingsIMG.Click += new System.EventHandler(this.settingsIMG_Click);
             // 
             // separatorLine2
             // 
@@ -205,6 +215,7 @@
             this.acountIMG.Size = new System.Drawing.Size(38, 34);
             this.acountIMG.TabIndex = 5;
             this.acountIMG.TabStop = false;
+            this.acountIMG.Click += new System.EventHandler(this.acountIMG_Click);
             // 
             // separatorLine1
             // 
@@ -219,6 +230,7 @@
             // 
             // calendarIMG
             // 
+            this.calendarIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
             this.calendarIMG.BackgroundImage = global::Agilize.Properties.Resources.calendarIMG;
             this.calendarIMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.calendarIMG.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -227,21 +239,7 @@
             this.calendarIMG.Size = new System.Drawing.Size(38, 34);
             this.calendarIMG.TabIndex = 4;
             this.calendarIMG.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(16, 703);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(271, 46);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Log Out";
-            this.button1.UseVisualStyleBackColor = false;
+            this.calendarIMG.Click += new System.EventHandler(this.calendarIMG_Click);
             // 
             // newProjectIMG
             // 
@@ -253,6 +251,7 @@
             this.newProjectIMG.Size = new System.Drawing.Size(38, 34);
             this.newProjectIMG.TabIndex = 3;
             this.newProjectIMG.TabStop = false;
+            this.newProjectIMG.Click += new System.EventHandler(this.newProjectIMG_Click);
             // 
             // projectFoldersIMG
             // 
@@ -264,6 +263,7 @@
             this.projectFoldersIMG.Size = new System.Drawing.Size(38, 34);
             this.projectFoldersIMG.TabIndex = 2;
             this.projectFoldersIMG.TabStop = false;
+            this.projectFoldersIMG.Click += new System.EventHandler(this.projectFoldersIMG_Click);
             // 
             // LblAcount
             // 
@@ -284,6 +284,7 @@
             this.homeIMG.Size = new System.Drawing.Size(38, 34);
             this.homeIMG.TabIndex = 1;
             this.homeIMG.TabStop = false;
+            this.homeIMG.Click += new System.EventHandler(this.homeIMG_Click);
             // 
             // LblMenu
             // 
@@ -296,7 +297,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Agilize.Properties.Resources.Icon;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(100, 19);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 103);
@@ -305,15 +306,26 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(4, 5);
-            this.monthCalendar1.Location = new System.Drawing.Point(312, 5);
+            this.monthCalendar1.BackColor = System.Drawing.SystemColors.Window;
+            this.monthCalendar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthCalendar1.Location = new System.Drawing.Point(641, 254);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 2;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
+            this.pictureBox3.Location = new System.Drawing.Point(11, 329);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(285, 38);
+            this.pictureBox3.TabIndex = 28;
+            this.pictureBox3.TabStop = false;
             // 
             // Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(1094, 761);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.Menu);
@@ -330,6 +342,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectFoldersIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,7 +361,6 @@
         private System.Windows.Forms.PictureBox acountIMG;
         private System.Windows.Forms.PictureBox separatorLine1;
         private System.Windows.Forms.PictureBox calendarIMG;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox newProjectIMG;
         private System.Windows.Forms.PictureBox projectFoldersIMG;
         private System.Windows.Forms.Label LblAcount;
@@ -356,5 +368,6 @@
         private System.Windows.Forms.Label LblMenu;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

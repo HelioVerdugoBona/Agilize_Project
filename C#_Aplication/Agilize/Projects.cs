@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 
 namespace Agilize
 {
-    internal class Projects
+    public class Projects
     {
         public String projectOwner {get; set;}
+        public String projectName {get; set;}
         public List<Users> arrayProjectUsers { get; set; }
 
         public List<Tasks> arrayTasks { get; set; }
         public Projects() { }
 
-        public Projects(string projectOwner, List<Users> arrayProjectUsers, List<Tasks> arrayTasks)
+        public Projects(string projectOwner, String projectName, List<Users> arrayProjectUsers, List<Tasks> arrayTasks)
         {
             this.projectOwner = projectOwner;
+            this.projectName = projectName;
             this.arrayProjectUsers = arrayProjectUsers;
             this.arrayTasks = arrayTasks;
         }
