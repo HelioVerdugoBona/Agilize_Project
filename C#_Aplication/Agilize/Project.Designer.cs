@@ -1,6 +1,6 @@
 ﻿namespace Agilize
 {
-    partial class Project
+    partial class ProjectWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectWindow));
             this.Menu = new System.Windows.Forms.GroupBox();
             this.SettingLBL = new System.Windows.Forms.LinkLabel();
             this.acountLBL = new System.Windows.Forms.LinkLabel();
@@ -40,7 +41,6 @@
             this.acountIMG = new System.Windows.Forms.PictureBox();
             this.separatorLine1 = new System.Windows.Forms.PictureBox();
             this.calendarIMG = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.manageMembersIMG = new System.Windows.Forms.PictureBox();
             this.projectFoldersIMG = new System.Windows.Forms.PictureBox();
             this.LblAcount = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.pendingConfirmationLBL = new System.Windows.Forms.Label();
             this.listView5 = new System.Windows.Forms.ListView();
             this.doneLBL = new System.Windows.Forms.Label();
+            this.saveBTN = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).BeginInit();
@@ -85,7 +86,6 @@
             this.Menu.Controls.Add(this.acountIMG);
             this.Menu.Controls.Add(this.separatorLine1);
             this.Menu.Controls.Add(this.calendarIMG);
-            this.Menu.Controls.Add(this.button1);
             this.Menu.Controls.Add(this.manageMembersIMG);
             this.Menu.Controls.Add(this.projectFoldersIMG);
             this.Menu.Controls.Add(this.LblAcount);
@@ -112,6 +112,7 @@
             this.SettingLBL.TabStop = true;
             this.SettingLBL.Text = "Settings";
             this.SettingLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.SettingLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SettingLBL_LinkClicked);
             // 
             // acountLBL
             // 
@@ -126,6 +127,7 @@
             this.acountLBL.TabStop = true;
             this.acountLBL.Text = "Account";
             this.acountLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.acountLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.acountLBL_LinkClicked);
             // 
             // projectFoldersLBL
             // 
@@ -140,6 +142,7 @@
             this.projectFoldersLBL.TabStop = true;
             this.projectFoldersLBL.Text = "Projects Folders";
             this.projectFoldersLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.projectFoldersLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.projectFoldersLBL_LinkClicked);
             // 
             // calendarLBL
             // 
@@ -154,6 +157,7 @@
             this.calendarLBL.TabStop = true;
             this.calendarLBL.Text = "Calendar";
             this.calendarLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.calendarLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.calendarLBL_LinkClicked);
             // 
             // manageMembersLBL
             // 
@@ -168,6 +172,7 @@
             this.manageMembersLBL.TabStop = true;
             this.manageMembersLBL.Text = "Manage Members";
             this.manageMembersLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.manageMembersLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.manageMembersLBL_LinkClicked);
             // 
             // homeLBL
             // 
@@ -194,6 +199,7 @@
             this.settingsIMG.Size = new System.Drawing.Size(38, 34);
             this.settingsIMG.TabIndex = 6;
             this.settingsIMG.TabStop = false;
+            this.settingsIMG.Click += new System.EventHandler(this.settingsIMG_Click);
             // 
             // separatorLine2
             // 
@@ -216,6 +222,7 @@
             this.acountIMG.Size = new System.Drawing.Size(38, 34);
             this.acountIMG.TabIndex = 5;
             this.acountIMG.TabStop = false;
+            this.acountIMG.Click += new System.EventHandler(this.acountIMG_Click);
             // 
             // separatorLine1
             // 
@@ -238,21 +245,7 @@
             this.calendarIMG.Size = new System.Drawing.Size(38, 34);
             this.calendarIMG.TabIndex = 4;
             this.calendarIMG.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(16, 703);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(271, 46);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Log Out";
-            this.button1.UseVisualStyleBackColor = false;
+            this.calendarIMG.Click += new System.EventHandler(this.calendarIMG_Click);
             // 
             // manageMembersIMG
             // 
@@ -264,7 +257,7 @@
             this.manageMembersIMG.Size = new System.Drawing.Size(38, 34);
             this.manageMembersIMG.TabIndex = 3;
             this.manageMembersIMG.TabStop = false;
-            this.manageMembersIMG.Click += new System.EventHandler(this.newProjectIMG_Click);
+            this.manageMembersIMG.Click += new System.EventHandler(this.manageMembersIMG_Click);
             // 
             // projectFoldersIMG
             // 
@@ -276,6 +269,7 @@
             this.projectFoldersIMG.Size = new System.Drawing.Size(38, 34);
             this.projectFoldersIMG.TabIndex = 2;
             this.projectFoldersIMG.TabStop = false;
+            this.projectFoldersIMG.Click += new System.EventHandler(this.projectFoldersIMG_Click);
             // 
             // LblAcount
             // 
@@ -309,7 +303,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Agilize.Properties.Resources.Icon;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(100, 19);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 103);
@@ -444,12 +438,27 @@
             this.doneLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.doneLBL.Click += new System.EventHandler(this.doneLBL_Click);
             // 
-            // Project
+            // saveBTN
+            // 
+            this.saveBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
+            this.saveBTN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveBTN.FlatAppearance.BorderSize = 0;
+            this.saveBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBTN.Image = global::Agilize.Properties.Resources.saveIMG;
+            this.saveBTN.Location = new System.Drawing.Point(1375, 45);
+            this.saveBTN.Name = "saveBTN";
+            this.saveBTN.Size = new System.Drawing.Size(90, 60);
+            this.saveBTN.TabIndex = 13;
+            this.saveBTN.UseVisualStyleBackColor = false;
+            this.saveBTN.Click += new System.EventHandler(this.saveBTN_Click);
+            // 
+            // ProjectWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(1484, 761);
+            this.Controls.Add(this.saveBTN);
             this.Controls.Add(this.doneLBL);
             this.Controls.Add(this.listView5);
             this.Controls.Add(this.pendingConfirmationLBL);
@@ -462,8 +471,8 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.projectNameLBL);
             this.Controls.Add(this.Menu);
-            this.Name = "Project";
-            this.Text = "Project";
+            this.Name = "ProjectWindow";
+            this.Text = "Projects";
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).EndInit();
@@ -494,7 +503,6 @@
         private System.Windows.Forms.PictureBox acountIMG;
         private System.Windows.Forms.PictureBox separatorLine1;
         private System.Windows.Forms.PictureBox calendarIMG;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox manageMembersIMG;
         private System.Windows.Forms.PictureBox projectFoldersIMG;
         private System.Windows.Forms.Label LblAcount;
@@ -512,5 +520,6 @@
         private System.Windows.Forms.Label pendingConfirmationLBL;
         private System.Windows.Forms.ListView listView5;
         private System.Windows.Forms.Label doneLBL;
+        private System.Windows.Forms.Button saveBTN;
     }
 }

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Agilize
 {
-    internal class Tasks
+    public class Tasks
     {
         public DateTimePicker dateCreation {  get; set; }
 

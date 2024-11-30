@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainHub));
             this.Menu = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.LblAcount = new System.Windows.Forms.Label();
-            this.LblMenu = new System.Windows.Forms.Label();
-            this.homeLBL = new System.Windows.Forms.LinkLabel();
-            this.newProjectLBL = new System.Windows.Forms.LinkLabel();
-            this.calendarLBL = new System.Windows.Forms.LinkLabel();
-            this.projectFoldersLBL = new System.Windows.Forms.LinkLabel();
-            this.acountLBL = new System.Windows.Forms.LinkLabel();
             this.SettingLBL = new System.Windows.Forms.LinkLabel();
-            this.projectsBox = new System.Windows.Forms.GroupBox();
-            this.projectsLBL = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.acountLBL = new System.Windows.Forms.LinkLabel();
+            this.projectFoldersLBL = new System.Windows.Forms.LinkLabel();
+            this.calendarLBL = new System.Windows.Forms.LinkLabel();
+            this.newProjectLBL = new System.Windows.Forms.LinkLabel();
+            this.homeLBL = new System.Windows.Forms.LinkLabel();
             this.settingsIMG = new System.Windows.Forms.PictureBox();
             this.separatorLine2 = new System.Windows.Forms.PictureBox();
             this.acountIMG = new System.Windows.Forms.PictureBox();
             this.separatorLine1 = new System.Windows.Forms.PictureBox();
             this.calendarIMG = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.newProjectIMG = new System.Windows.Forms.PictureBox();
             this.projectFoldersIMG = new System.Windows.Forms.PictureBox();
+            this.LblAcount = new System.Windows.Forms.Label();
             this.homeIMG = new System.Windows.Forms.PictureBox();
+            this.LblMenu = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.projectsBox = new System.Windows.Forms.GroupBox();
+            this.projectsLBL = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Menu.SuspendLayout();
-            this.projectsBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acountIMG)).BeginInit();
@@ -62,6 +62,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectFoldersIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.projectsBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Menu
@@ -86,61 +89,73 @@
             this.Menu.Controls.Add(this.homeIMG);
             this.Menu.Controls.Add(this.LblMenu);
             this.Menu.Controls.Add(this.pictureBox2);
+            this.Menu.Controls.Add(this.pictureBox3);
             this.Menu.Location = new System.Drawing.Point(-1, 0);
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(312, 763);
             this.Menu.TabIndex = 0;
             this.Menu.TabStop = false;
             this.Menu.Text = " ";
-            this.Menu.Enter += new System.EventHandler(this.Menu_Enter);
             // 
-            // button1
+            // SettingLBL
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(16, 703);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(271, 46);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Log Out";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SettingLBL.AutoSize = true;
+            this.SettingLBL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SettingLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SettingLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.SettingLBL.Location = new System.Drawing.Point(64, 517);
+            this.SettingLBL.Name = "SettingLBL";
+            this.SettingLBL.Size = new System.Drawing.Size(76, 24);
+            this.SettingLBL.TabIndex = 18;
+            this.SettingLBL.TabStop = true;
+            this.SettingLBL.Text = "Settings";
+            this.SettingLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.SettingLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SettingLBL_LinkClicked);
             // 
-            // LblAcount
+            // acountLBL
             // 
-            this.LblAcount.AutoSize = true;
-            this.LblAcount.Location = new System.Drawing.Point(13, 432);
-            this.LblAcount.Name = "LblAcount";
-            this.LblAcount.Size = new System.Drawing.Size(41, 13);
-            this.LblAcount.TabIndex = 10;
-            this.LblAcount.Text = "Acount";
+            this.acountLBL.AutoSize = true;
+            this.acountLBL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.acountLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acountLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.acountLBL.Location = new System.Drawing.Point(64, 465);
+            this.acountLBL.Name = "acountLBL";
+            this.acountLBL.Size = new System.Drawing.Size(80, 24);
+            this.acountLBL.TabIndex = 17;
+            this.acountLBL.TabStop = true;
+            this.acountLBL.Text = "Account";
+            this.acountLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.acountLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.acountLBL_LinkClicked);
             // 
-            // LblMenu
+            // projectFoldersLBL
             // 
-            this.LblMenu.AutoSize = true;
-            this.LblMenu.Location = new System.Drawing.Point(13, 201);
-            this.LblMenu.Name = "LblMenu";
-            this.LblMenu.Size = new System.Drawing.Size(34, 13);
-            this.LblMenu.TabIndex = 9;
-            this.LblMenu.Text = "Menu";
+            this.projectFoldersLBL.AutoSize = true;
+            this.projectFoldersLBL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.projectFoldersLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectFoldersLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.projectFoldersLBL.Location = new System.Drawing.Point(64, 392);
+            this.projectFoldersLBL.Name = "projectFoldersLBL";
+            this.projectFoldersLBL.Size = new System.Drawing.Size(146, 24);
+            this.projectFoldersLBL.TabIndex = 16;
+            this.projectFoldersLBL.TabStop = true;
+            this.projectFoldersLBL.Text = "Projects Folders";
+            this.projectFoldersLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.projectFoldersLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.projectFoldersLBL_LinkClicked);
             // 
-            // homeLBL
+            // calendarLBL
             // 
-            this.homeLBL.AutoSize = true;
-            this.homeLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.homeLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.homeLBL.Location = new System.Drawing.Point(64, 234);
-            this.homeLBL.Name = "homeLBL";
-            this.homeLBL.Size = new System.Drawing.Size(62, 24);
-            this.homeLBL.TabIndex = 13;
-            this.homeLBL.TabStop = true;
-            this.homeLBL.Text = "Home";
-            this.homeLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.calendarLBL.AutoSize = true;
+            this.calendarLBL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.calendarLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calendarLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.calendarLBL.Location = new System.Drawing.Point(64, 341);
+            this.calendarLBL.Name = "calendarLBL";
+            this.calendarLBL.Size = new System.Drawing.Size(86, 24);
+            this.calendarLBL.TabIndex = 15;
+            this.calendarLBL.TabStop = true;
+            this.calendarLBL.Text = "Calendar";
+            this.calendarLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.calendarLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.calendarLBL_LinkClicked);
             // 
             // newProjectLBL
             // 
@@ -157,93 +172,21 @@
             this.newProjectLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
             this.newProjectLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newProjectLBL_LinkClicked);
             // 
-            // calendarLBL
+            // homeLBL
             // 
-            this.calendarLBL.AutoSize = true;
-            this.calendarLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.calendarLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calendarLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.calendarLBL.Location = new System.Drawing.Point(64, 341);
-            this.calendarLBL.Name = "calendarLBL";
-            this.calendarLBL.Size = new System.Drawing.Size(86, 24);
-            this.calendarLBL.TabIndex = 15;
-            this.calendarLBL.TabStop = true;
-            this.calendarLBL.Text = "Calendar";
-            this.calendarLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            // 
-            // projectFoldersLBL
-            // 
-            this.projectFoldersLBL.AutoSize = true;
-            this.projectFoldersLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.projectFoldersLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectFoldersLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.projectFoldersLBL.Location = new System.Drawing.Point(64, 392);
-            this.projectFoldersLBL.Name = "projectFoldersLBL";
-            this.projectFoldersLBL.Size = new System.Drawing.Size(146, 24);
-            this.projectFoldersLBL.TabIndex = 16;
-            this.projectFoldersLBL.TabStop = true;
-            this.projectFoldersLBL.Text = "Projects Folders";
-            this.projectFoldersLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            // 
-            // acountLBL
-            // 
-            this.acountLBL.AutoSize = true;
-            this.acountLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.acountLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acountLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.acountLBL.Location = new System.Drawing.Point(64, 465);
-            this.acountLBL.Name = "acountLBL";
-            this.acountLBL.Size = new System.Drawing.Size(80, 24);
-            this.acountLBL.TabIndex = 17;
-            this.acountLBL.TabStop = true;
-            this.acountLBL.Text = "Account";
-            this.acountLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            // 
-            // SettingLBL
-            // 
-            this.SettingLBL.AutoSize = true;
-            this.SettingLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SettingLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SettingLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.SettingLBL.Location = new System.Drawing.Point(64, 517);
-            this.SettingLBL.Name = "SettingLBL";
-            this.SettingLBL.Size = new System.Drawing.Size(76, 24);
-            this.SettingLBL.TabIndex = 18;
-            this.SettingLBL.TabStop = true;
-            this.SettingLBL.Text = "Settings";
-            this.SettingLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            // 
-            // projectsBox
-            // 
-            this.projectsBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
-            this.projectsBox.Controls.Add(this.projectsLBL);
-            this.projectsBox.Controls.Add(this.pictureBox1);
-            this.projectsBox.Location = new System.Drawing.Point(327, 12);
-            this.projectsBox.Name = "projectsBox";
-            this.projectsBox.Size = new System.Drawing.Size(925, 737);
-            this.projectsBox.TabIndex = 1;
-            this.projectsBox.TabStop = false;
-            // 
-            // projectsLBL
-            // 
-            this.projectsLBL.AutoSize = true;
-            this.projectsLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectsLBL.Location = new System.Drawing.Point(12, 29);
-            this.projectsLBL.Name = "projectsLBL";
-            this.projectsLBL.Size = new System.Drawing.Size(132, 37);
-            this.projectsLBL.TabIndex = 20;
-            this.projectsLBL.Text = "Projects";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.pictureBox1.BackgroundImage = global::Agilize.Properties.Resources.Vector_3;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(885, 1);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.homeLBL.AutoSize = true;
+            this.homeLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
+            this.homeLBL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homeLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.homeLBL.Location = new System.Drawing.Point(64, 234);
+            this.homeLBL.Name = "homeLBL";
+            this.homeLBL.Size = new System.Drawing.Size(62, 24);
+            this.homeLBL.TabIndex = 13;
+            this.homeLBL.TabStop = true;
+            this.homeLBL.Text = "Home";
+            this.homeLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.homeLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.homeLBL_LinkClicked);
             // 
             // settingsIMG
             // 
@@ -255,6 +198,7 @@
             this.settingsIMG.Size = new System.Drawing.Size(38, 34);
             this.settingsIMG.TabIndex = 6;
             this.settingsIMG.TabStop = false;
+            this.settingsIMG.Click += new System.EventHandler(this.settingsIMG_Click);
             // 
             // separatorLine2
             // 
@@ -300,7 +244,23 @@
             this.calendarIMG.Size = new System.Drawing.Size(38, 34);
             this.calendarIMG.TabIndex = 4;
             this.calendarIMG.TabStop = false;
-            this.calendarIMG.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.calendarIMG.Click += new System.EventHandler(this.calendarIMG_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(16, 703);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(271, 46);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Log Out";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // newProjectIMG
             // 
@@ -324,9 +284,20 @@
             this.projectFoldersIMG.Size = new System.Drawing.Size(38, 34);
             this.projectFoldersIMG.TabIndex = 2;
             this.projectFoldersIMG.TabStop = false;
+            this.projectFoldersIMG.Click += new System.EventHandler(this.projectFoldersIMG_Click);
+            // 
+            // LblAcount
+            // 
+            this.LblAcount.AutoSize = true;
+            this.LblAcount.Location = new System.Drawing.Point(13, 432);
+            this.LblAcount.Name = "LblAcount";
+            this.LblAcount.Size = new System.Drawing.Size(41, 13);
+            this.LblAcount.TabIndex = 10;
+            this.LblAcount.Text = "Acount";
             // 
             // homeIMG
             // 
+            this.homeIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
             this.homeIMG.BackgroundImage = global::Agilize.Properties.Resources.homeIMG;
             this.homeIMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.homeIMG.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -335,16 +306,66 @@
             this.homeIMG.Size = new System.Drawing.Size(38, 34);
             this.homeIMG.TabIndex = 1;
             this.homeIMG.TabStop = false;
-            this.homeIMG.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.homeIMG.Click += new System.EventHandler(this.homeIMG_Click);
+            // 
+            // LblMenu
+            // 
+            this.LblMenu.AutoSize = true;
+            this.LblMenu.Location = new System.Drawing.Point(13, 201);
+            this.LblMenu.Name = "LblMenu";
+            this.LblMenu.Size = new System.Drawing.Size(34, 13);
+            this.LblMenu.TabIndex = 9;
+            this.LblMenu.Text = "Menu";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Agilize.Properties.Resources.Icon;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(100, 19);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 103);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
+            this.pictureBox3.Location = new System.Drawing.Point(9, 222);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(285, 38);
+            this.pictureBox3.TabIndex = 24;
+            this.pictureBox3.TabStop = false;
+            // 
+            // projectsBox
+            // 
+            this.projectsBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
+            this.projectsBox.Controls.Add(this.projectsLBL);
+            this.projectsBox.Controls.Add(this.pictureBox1);
+            this.projectsBox.Location = new System.Drawing.Point(327, 12);
+            this.projectsBox.Name = "projectsBox";
+            this.projectsBox.Size = new System.Drawing.Size(925, 737);
+            this.projectsBox.TabIndex = 1;
+            this.projectsBox.TabStop = false;
+            // 
+            // projectsLBL
+            // 
+            this.projectsLBL.AutoSize = true;
+            this.projectsLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectsLBL.Location = new System.Drawing.Point(12, 29);
+            this.projectsLBL.Name = "projectsLBL";
+            this.projectsLBL.Size = new System.Drawing.Size(132, 37);
+            this.projectsLBL.TabIndex = 20;
+            this.projectsLBL.Text = "Projects";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
+            this.pictureBox1.BackgroundImage = global::Agilize.Properties.Resources.Vector_3;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(885, 1);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
             // 
             // MainHub
             // 
@@ -358,9 +379,6 @@
             this.Text = "MainHub";
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
-            this.projectsBox.ResumeLayout(false);
-            this.projectsBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.acountIMG)).EndInit();
@@ -370,6 +388,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectFoldersIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.projectsBox.ResumeLayout(false);
+            this.projectsBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,5 +420,6 @@
         private System.Windows.Forms.GroupBox projectsBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label projectsLBL;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
