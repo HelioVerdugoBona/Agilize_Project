@@ -18,13 +18,14 @@ namespace Agilize
 {
     public partial class Login : Form
     {
-        Users user = new Users();
+        Users user;
         String pathToProjectFiles;
         String encryptingKey = "f83jsd74jdue0qnd";// Letras aleatoreas completamente
 
         public Login(String pathToProjectFiles) 
         {
             InitializeComponent();
+            user  = new Users();
             SetAll();
             this.pathToProjectFiles = pathToProjectFiles;
         }
@@ -98,6 +99,7 @@ namespace Agilize
             {
                 if (appUser.nickname.Equals(user.nickname) && appUser.password.Equals(user.password))
                 {
+                    user = appUser;
                     return true;
                 }
             }

@@ -19,6 +19,7 @@ namespace Agilize
         public NewProject(Users user, String pathToProjectFiles)
         {
             InitializeComponent();
+            this.user = new Users();
             this.user = user;
             this.pathToProjectFiles = pathToProjectFiles;
         }
@@ -41,7 +42,7 @@ namespace Agilize
             }
             else
             {
-                projects.projectName = projectNameTxTBox.Text;// Esto se tiene que Returnear aún tengo que pensar como
+                projects.projectName = projectNameTxTBox.Text;
 
             }
             
@@ -49,18 +50,7 @@ namespace Agilize
 
         private void acceptBtn_Click(object sender, EventArgs e)
         {
-            if (user.projectsList == null)
-            {
-                List<String> firstProject = new List<String>();
-                firstProject.Add(projects.projectName);
-                user.projectsList = firstProject;
-            }
-            else
-            {
-                user.projectsList.Add(projects.projectName);
-            }
-            
-
+            user.projectsList.Add(projects.projectName);
             ProjectWindow project = new ProjectWindow(user,pathToProjectFiles,projects);
             project.Show();
             this.Close();

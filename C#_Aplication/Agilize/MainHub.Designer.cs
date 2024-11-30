@@ -52,6 +52,7 @@
             this.projectsBox = new System.Windows.Forms.GroupBox();
             this.projectsLBL = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ProjectLBox = new System.Windows.Forms.ListBox();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).BeginInit();
@@ -338,6 +339,7 @@
             // projectsBox
             // 
             this.projectsBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
+            this.projectsBox.Controls.Add(this.ProjectLBox);
             this.projectsBox.Controls.Add(this.projectsLBL);
             this.projectsBox.Controls.Add(this.pictureBox1);
             this.projectsBox.Location = new System.Drawing.Point(327, 12);
@@ -366,6 +368,16 @@
             this.pictureBox1.Size = new System.Drawing.Size(885, 1);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
+            // 
+            // ProjectLBox
+            // 
+            this.ProjectLBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
+            this.ProjectLBox.FormattingEnabled = true;
+            this.ProjectLBox.Location = new System.Drawing.Point(19, 99);
+            this.ProjectLBox.Name = "ProjectLBox";
+            this.ProjectLBox.Size = new System.Drawing.Size(885, 615);
+            this.ProjectLBox.TabIndex = 21;
+            this.ProjectLBox.SelectedIndexChanged += new System.EventHandler(this.ProjectLBox_SelectedIndexChanged);
             // 
             // MainHub
             // 
@@ -421,5 +433,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label projectsLBL;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.ListBox ProjectLBox;
     }
 }
