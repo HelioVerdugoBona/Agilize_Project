@@ -17,9 +17,10 @@ namespace Agilize
         String pathToProjectFiles;
         public MainHub(Users user, String pathToProjectFiles)
         {
+            this.user = new Users();
             InitializeComponent();
-            SetAllLbls();
             this.user = user;
+            SetAllLbls();
             this.pathToProjectFiles = pathToProjectFiles;
         }
 
@@ -38,6 +39,11 @@ namespace Agilize
             projectFoldersLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             acountLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             SettingLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            foreach(var project in user.projectsList)
+            {
+                ProjectLBox.Items.Add(project);
+            }
+            
         }
 
         private void homeLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -127,6 +133,11 @@ namespace Agilize
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ProjectLBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

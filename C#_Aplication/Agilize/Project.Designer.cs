@@ -49,16 +49,16 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.projectNameLBL = new System.Windows.Forms.Label();
             this.backLogLBL = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.listView4 = new System.Windows.Forms.ListView();
             this.toDoLBL = new System.Windows.Forms.Label();
             this.doingLBL = new System.Windows.Forms.Label();
             this.pendingConfirmationLBL = new System.Windows.Forms.Label();
-            this.listView5 = new System.Windows.Forms.ListView();
             this.doneLBL = new System.Windows.Forms.Label();
             this.saveBTN = new System.Windows.Forms.Button();
+            this.ToDoLBox = new System.Windows.Forms.ListBox();
+            this.DoingLBox = new System.Windows.Forms.ListBox();
+            this.PendingConfirmationLBox = new System.Windows.Forms.ListBox();
+            this.BackLogLBox = new System.Windows.Forms.ListBox();
+            this.DoneLBox = new System.Windows.Forms.ListBox();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).BeginInit();
@@ -331,47 +331,11 @@
             this.backLogLBL.ForeColor = System.Drawing.Color.White;
             this.backLogLBL.Location = new System.Drawing.Point(328, 131);
             this.backLogLBL.Name = "backLogLBL";
-            this.backLogLBL.Size = new System.Drawing.Size(209, 26);
+            this.backLogLBL.Size = new System.Drawing.Size(210, 26);
             this.backLogLBL.TabIndex = 3;
             this.backLogLBL.Text = "BackLog";
             this.backLogLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.backLogLBL.Click += new System.EventHandler(this.backLogLBL_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(327, 131);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(210, 620);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView2
-            // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(558, 131);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(210, 620);
-            this.listView2.TabIndex = 5;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView3
-            // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(790, 131);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(210, 620);
-            this.listView3.TabIndex = 6;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView4
-            // 
-            this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(1023, 131);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(210, 620);
-            this.listView4.TabIndex = 7;
-            this.listView4.UseCompatibleStateImageBehavior = false;
             // 
             // toDoLBL
             // 
@@ -381,7 +345,7 @@
             this.toDoLBL.ForeColor = System.Drawing.Color.White;
             this.toDoLBL.Location = new System.Drawing.Point(559, 131);
             this.toDoLBL.Name = "toDoLBL";
-            this.toDoLBL.Size = new System.Drawing.Size(209, 26);
+            this.toDoLBL.Size = new System.Drawing.Size(210, 26);
             this.toDoLBL.TabIndex = 8;
             this.toDoLBL.Text = "To Do";
             this.toDoLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -395,7 +359,7 @@
             this.doingLBL.ForeColor = System.Drawing.Color.White;
             this.doingLBL.Location = new System.Drawing.Point(791, 131);
             this.doingLBL.Name = "doingLBL";
-            this.doingLBL.Size = new System.Drawing.Size(209, 26);
+            this.doingLBL.Size = new System.Drawing.Size(210, 26);
             this.doingLBL.TabIndex = 9;
             this.doingLBL.Text = "Doing";
             this.doingLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -409,20 +373,11 @@
             this.pendingConfirmationLBL.ForeColor = System.Drawing.Color.White;
             this.pendingConfirmationLBL.Location = new System.Drawing.Point(1023, 131);
             this.pendingConfirmationLBL.Name = "pendingConfirmationLBL";
-            this.pendingConfirmationLBL.Size = new System.Drawing.Size(209, 26);
+            this.pendingConfirmationLBL.Size = new System.Drawing.Size(210, 26);
             this.pendingConfirmationLBL.TabIndex = 10;
             this.pendingConfirmationLBL.Text = "Pending Confirmation";
             this.pendingConfirmationLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.pendingConfirmationLBL.Click += new System.EventHandler(this.pendingConfirmationLBL_Click);
-            // 
-            // listView5
-            // 
-            this.listView5.HideSelection = false;
-            this.listView5.Location = new System.Drawing.Point(1255, 131);
-            this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(210, 620);
-            this.listView5.TabIndex = 11;
-            this.listView5.UseCompatibleStateImageBehavior = false;
             // 
             // doneLBL
             // 
@@ -432,7 +387,7 @@
             this.doneLBL.ForeColor = System.Drawing.Color.White;
             this.doneLBL.Location = new System.Drawing.Point(1256, 131);
             this.doneLBL.Name = "doneLBL";
-            this.doneLBL.Size = new System.Drawing.Size(209, 26);
+            this.doneLBL.Size = new System.Drawing.Size(210, 26);
             this.doneLBL.TabIndex = 12;
             this.doneLBL.Text = "Done";
             this.doneLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -452,25 +407,70 @@
             this.saveBTN.UseVisualStyleBackColor = false;
             this.saveBTN.Click += new System.EventHandler(this.saveBTN_Click);
             // 
+            // ToDoLBox
+            // 
+            this.ToDoLBox.FormattingEnabled = true;
+            this.ToDoLBox.Location = new System.Drawing.Point(559, 157);
+            this.ToDoLBox.Name = "ToDoLBox";
+            this.ToDoLBox.Size = new System.Drawing.Size(210, 589);
+            this.ToDoLBox.TabIndex = 15;
+            this.ToDoLBox.SelectedIndexChanged += new System.EventHandler(this.ToDoLBox_SelectedIndexChanged);
+            // 
+            // DoingLBox
+            // 
+            this.DoingLBox.FormattingEnabled = true;
+            this.DoingLBox.Location = new System.Drawing.Point(791, 157);
+            this.DoingLBox.Name = "DoingLBox";
+            this.DoingLBox.Size = new System.Drawing.Size(210, 589);
+            this.DoingLBox.TabIndex = 16;
+            this.DoingLBox.SelectedIndexChanged += new System.EventHandler(this.DoingLBox_SelectedIndexChanged);
+            // 
+            // PendingConfirmationLBox
+            // 
+            this.PendingConfirmationLBox.FormattingEnabled = true;
+            this.PendingConfirmationLBox.Location = new System.Drawing.Point(1023, 157);
+            this.PendingConfirmationLBox.Name = "PendingConfirmationLBox";
+            this.PendingConfirmationLBox.Size = new System.Drawing.Size(210, 589);
+            this.PendingConfirmationLBox.TabIndex = 17;
+            this.PendingConfirmationLBox.SelectedIndexChanged += new System.EventHandler(this.PendingConfirmationLBox_SelectedIndexChanged);
+            // 
+            // BackLogLBox
+            // 
+            this.BackLogLBox.FormattingEnabled = true;
+            this.BackLogLBox.Location = new System.Drawing.Point(328, 157);
+            this.BackLogLBox.Name = "BackLogLBox";
+            this.BackLogLBox.Size = new System.Drawing.Size(210, 589);
+            this.BackLogLBox.TabIndex = 18;
+            this.BackLogLBox.SelectedIndexChanged += new System.EventHandler(this.BackLogLBox_SelectedIndexChanged);
+            // 
+            // DoneLBox
+            // 
+            this.DoneLBox.FormattingEnabled = true;
+            this.DoneLBox.Location = new System.Drawing.Point(1256, 157);
+            this.DoneLBox.Name = "DoneLBox";
+            this.DoneLBox.Size = new System.Drawing.Size(210, 589);
+            this.DoneLBox.TabIndex = 19;
+            this.DoneLBox.SelectedIndexChanged += new System.EventHandler(this.DoneLBox_SelectedIndexChanged);
+            // 
             // ProjectWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(1484, 761);
+            this.Controls.Add(this.DoneLBox);
+            this.Controls.Add(this.BackLogLBox);
             this.Controls.Add(this.saveBTN);
             this.Controls.Add(this.doneLBL);
-            this.Controls.Add(this.listView5);
             this.Controls.Add(this.pendingConfirmationLBL);
             this.Controls.Add(this.doingLBL);
             this.Controls.Add(this.toDoLBL);
-            this.Controls.Add(this.listView4);
-            this.Controls.Add(this.listView3);
             this.Controls.Add(this.backLogLBL);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.projectNameLBL);
             this.Controls.Add(this.Menu);
+            this.Controls.Add(this.PendingConfirmationLBox);
+            this.Controls.Add(this.DoingLBox);
+            this.Controls.Add(this.ToDoLBox);
             this.Name = "ProjectWindow";
             this.Text = "Projects";
             this.Menu.ResumeLayout(false);
@@ -511,15 +511,15 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label projectNameLBL;
         private System.Windows.Forms.Label backLogLBL;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.ListView listView4;
         private System.Windows.Forms.Label toDoLBL;
         private System.Windows.Forms.Label doingLBL;
         private System.Windows.Forms.Label pendingConfirmationLBL;
-        private System.Windows.Forms.ListView listView5;
         private System.Windows.Forms.Label doneLBL;
         private System.Windows.Forms.Button saveBTN;
+        private System.Windows.Forms.ListBox ToDoLBox;
+        private System.Windows.Forms.ListBox DoingLBox;
+        private System.Windows.Forms.ListBox PendingConfirmationLBox;
+        private System.Windows.Forms.ListBox BackLogLBox;
+        private System.Windows.Forms.ListBox DoneLBox;
     }
 }

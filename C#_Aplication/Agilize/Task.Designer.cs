@@ -31,13 +31,9 @@
             this.TaskLBL = new System.Windows.Forms.Label();
             this.descriptionLbl = new System.Windows.Forms.Label();
             this.descriptionTxtBox = new System.Windows.Forms.RichTextBox();
-            this.retunBTN = new System.Windows.Forms.Button();
-            this.saveBTN = new System.Windows.Forms.Button();
             this.dateCreationLBL = new System.Windows.Forms.Label();
             this.deadLineLBL = new System.Windows.Forms.Label();
-            this.currentSateTxtBox = new System.Windows.Forms.TextBox();
             this.currentStateLBL = new System.Windows.Forms.Label();
-            this.sprintTxtBox = new System.Windows.Forms.TextBox();
             this.SprintLBL = new System.Windows.Forms.Label();
             this.estimatedTimeTxtBox = new System.Windows.Forms.TextBox();
             this.estimatedTimeLBL = new System.Windows.Forms.Label();
@@ -47,6 +43,11 @@
             this.MembersListBox = new System.Windows.Forms.ListBox();
             this.addMemberBTN = new System.Windows.Forms.Button();
             this.ListedMembersListBox = new System.Windows.Forms.ListBox();
+            this.currentSateCBox = new System.Windows.Forms.ComboBox();
+            this.sprintNumUpDown = new System.Windows.Forms.NumericUpDown();
+            this.deleteMemberBtn = new System.Windows.Forms.Button();
+            this.retunBTN = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.sprintNumUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // TaskLBL
@@ -81,36 +82,9 @@
             this.descriptionTxtBox.Size = new System.Drawing.Size(490, 640);
             this.descriptionTxtBox.TabIndex = 3;
             this.descriptionTxtBox.Text = "Add a description";
+            this.descriptionTxtBox.TextChanged += new System.EventHandler(this.descriptionTxtBox_TextChanged);
             this.descriptionTxtBox.Enter += new System.EventHandler(this.descriptionTxtBox_Enter);
             this.descriptionTxtBox.Leave += new System.EventHandler(this.descriptionTxtBox_Leave);
-            // 
-            // retunBTN
-            // 
-            this.retunBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
-            this.retunBTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.retunBTN.FlatAppearance.BorderSize = 0;
-            this.retunBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.retunBTN.Image = global::Agilize.Properties.Resources.returnIMG;
-            this.retunBTN.Location = new System.Drawing.Point(714, 9);
-            this.retunBTN.Name = "retunBTN";
-            this.retunBTN.Size = new System.Drawing.Size(90, 60);
-            this.retunBTN.TabIndex = 5;
-            this.retunBTN.UseVisualStyleBackColor = false;
-            this.retunBTN.Click += new System.EventHandler(this.retunBTN_Click);
-            // 
-            // saveBTN
-            // 
-            this.saveBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
-            this.saveBTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveBTN.FlatAppearance.BorderSize = 0;
-            this.saveBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBTN.Image = global::Agilize.Properties.Resources.saveIMG;
-            this.saveBTN.Location = new System.Drawing.Point(602, 9);
-            this.saveBTN.Name = "saveBTN";
-            this.saveBTN.Size = new System.Drawing.Size(90, 60);
-            this.saveBTN.TabIndex = 4;
-            this.saveBTN.UseVisualStyleBackColor = false;
-            this.saveBTN.Click += new System.EventHandler(this.saveBTN_Click);
             // 
             // dateCreationLBL
             // 
@@ -134,17 +108,6 @@
             this.deadLineLBL.Text = "Dead Line";
             this.deadLineLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // currentSateTxtBox
-            // 
-            this.currentSateTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
-            this.currentSateTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.currentSateTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentSateTxtBox.Location = new System.Drawing.Point(654, 222);
-            this.currentSateTxtBox.Name = "currentSateTxtBox";
-            this.currentSateTxtBox.Size = new System.Drawing.Size(150, 29);
-            this.currentSateTxtBox.TabIndex = 11;
-            this.currentSateTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // currentStateLBL
             // 
             this.currentStateLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
@@ -155,17 +118,6 @@
             this.currentStateLBL.TabIndex = 10;
             this.currentStateLBL.Text = "Current Sate";
             this.currentStateLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // sprintTxtBox
-            // 
-            this.sprintTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
-            this.sprintTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sprintTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sprintTxtBox.Location = new System.Drawing.Point(654, 282);
-            this.sprintTxtBox.Name = "sprintTxtBox";
-            this.sprintTxtBox.Size = new System.Drawing.Size(150, 29);
-            this.sprintTxtBox.TabIndex = 13;
-            this.sprintTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SprintLBL
             // 
@@ -185,9 +137,10 @@
             this.estimatedTimeTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estimatedTimeTxtBox.Location = new System.Drawing.Point(654, 334);
             this.estimatedTimeTxtBox.Name = "estimatedTimeTxtBox";
-            this.estimatedTimeTxtBox.Size = new System.Drawing.Size(150, 29);
+            this.estimatedTimeTxtBox.Size = new System.Drawing.Size(168, 29);
             this.estimatedTimeTxtBox.TabIndex = 15;
             this.estimatedTimeTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.estimatedTimeTxtBox.TextChanged += new System.EventHandler(this.estimatedTimeTxtBox_TextChanged);
             // 
             // estimatedTimeLBL
             // 
@@ -220,9 +173,10 @@
             this.deadLineTPicker.MinDate = new System.DateTime(2024, 11, 26, 0, 0, 0, 0);
             this.deadLineTPicker.MinimumSize = new System.Drawing.Size(4, 30);
             this.deadLineTPicker.Name = "deadLineTPicker";
-            this.deadLineTPicker.Size = new System.Drawing.Size(150, 30);
+            this.deadLineTPicker.Size = new System.Drawing.Size(168, 30);
             this.deadLineTPicker.TabIndex = 19;
             this.deadLineTPicker.Value = new System.DateTime(2024, 12, 3, 0, 0, 0, 0);
+            this.deadLineTPicker.ValueChanged += new System.EventHandler(this.deadLineTPicker_ValueChanged);
             // 
             // dateCreationTPicker
             // 
@@ -233,9 +187,10 @@
             this.dateCreationTPicker.MinimumSize = new System.Drawing.Size(4, 30);
             this.dateCreationTPicker.Name = "dateCreationTPicker";
             this.dateCreationTPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateCreationTPicker.Size = new System.Drawing.Size(150, 30);
+            this.dateCreationTPicker.Size = new System.Drawing.Size(168, 30);
             this.dateCreationTPicker.TabIndex = 20;
             this.dateCreationTPicker.Value = new System.DateTime(2024, 12, 3, 0, 0, 0, 0);
+            this.dateCreationTPicker.ValueChanged += new System.EventHandler(this.dateCreationTPicker_ValueChanged);
             // 
             // MembersListBox
             // 
@@ -245,6 +200,7 @@
             this.MembersListBox.Name = "MembersListBox";
             this.MembersListBox.Size = new System.Drawing.Size(314, 121);
             this.MembersListBox.TabIndex = 21;
+            this.MembersListBox.SelectedIndexChanged += new System.EventHandler(this.MembersListBox_SelectedIndexChanged);
             // 
             // addMemberBTN
             // 
@@ -259,6 +215,7 @@
             this.addMemberBTN.TabIndex = 22;
             this.addMemberBTN.Text = "Add Member";
             this.addMemberBTN.UseVisualStyleBackColor = false;
+            this.addMemberBTN.Click += new System.EventHandler(this.addMemberBTN_Click);
             // 
             // ListedMembersListBox
             // 
@@ -266,8 +223,75 @@
             this.ListedMembersListBox.FormattingEnabled = true;
             this.ListedMembersListBox.Location = new System.Drawing.Point(508, 423);
             this.ListedMembersListBox.Name = "ListedMembersListBox";
-            this.ListedMembersListBox.Size = new System.Drawing.Size(314, 173);
+            this.ListedMembersListBox.Size = new System.Drawing.Size(314, 134);
             this.ListedMembersListBox.TabIndex = 23;
+            this.ListedMembersListBox.SelectedIndexChanged += new System.EventHandler(this.ListedMembersListBox_SelectedIndexChanged);
+            // 
+            // currentSateCBox
+            // 
+            this.currentSateCBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
+            this.currentSateCBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.currentSateCBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentSateCBox.FormattingEnabled = true;
+            this.currentSateCBox.Location = new System.Drawing.Point(654, 221);
+            this.currentSateCBox.Name = "currentSateCBox";
+            this.currentSateCBox.Size = new System.Drawing.Size(168, 32);
+            this.currentSateCBox.TabIndex = 24;
+            this.currentSateCBox.SelectedIndexChanged += new System.EventHandler(this.currentSateCBox_SelectedIndexChanged);
+            // 
+            // sprintNumUpDown
+            // 
+            this.sprintNumUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
+            this.sprintNumUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sprintNumUpDown.Location = new System.Drawing.Point(654, 283);
+            this.sprintNumUpDown.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.sprintNumUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sprintNumUpDown.Name = "sprintNumUpDown";
+            this.sprintNumUpDown.Size = new System.Drawing.Size(168, 29);
+            this.sprintNumUpDown.TabIndex = 25;
+            this.sprintNumUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sprintNumUpDown.ValueChanged += new System.EventHandler(this.sprintNumUpDown_ValueChanged);
+            // 
+            // deleteMemberBtn
+            // 
+            this.deleteMemberBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
+            this.deleteMemberBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteMemberBtn.FlatAppearance.BorderSize = 0;
+            this.deleteMemberBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteMemberBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteMemberBtn.Location = new System.Drawing.Point(508, 563);
+            this.deleteMemberBtn.Name = "deleteMemberBtn";
+            this.deleteMemberBtn.Size = new System.Drawing.Size(314, 23);
+            this.deleteMemberBtn.TabIndex = 26;
+            this.deleteMemberBtn.Text = "Delete Member";
+            this.deleteMemberBtn.UseVisualStyleBackColor = false;
+            this.deleteMemberBtn.Click += new System.EventHandler(this.deleteMemberBtn_Click);
+            // 
+            // retunBTN
+            // 
+            this.retunBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
+            this.retunBTN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.retunBTN.FlatAppearance.BorderSize = 0;
+            this.retunBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.retunBTN.Image = global::Agilize.Properties.Resources.returnIMG;
+            this.retunBTN.Location = new System.Drawing.Point(714, 9);
+            this.retunBTN.Name = "retunBTN";
+            this.retunBTN.Size = new System.Drawing.Size(90, 60);
+            this.retunBTN.TabIndex = 5;
+            this.retunBTN.UseVisualStyleBackColor = false;
+            this.retunBTN.Click += new System.EventHandler(this.retunBTN_Click);
             // 
             // Task
             // 
@@ -275,6 +299,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(834, 761);
+            this.Controls.Add(this.deleteMemberBtn);
+            this.Controls.Add(this.sprintNumUpDown);
+            this.Controls.Add(this.currentSateCBox);
             this.Controls.Add(this.ListedMembersListBox);
             this.Controls.Add(this.addMemberBTN);
             this.Controls.Add(this.MembersListBox);
@@ -287,15 +314,13 @@
             this.Controls.Add(this.estimatedTimeLBL);
             this.Controls.Add(this.memebersLBL);
             this.Controls.Add(this.estimatedTimeTxtBox);
-            this.Controls.Add(this.sprintTxtBox);
-            this.Controls.Add(this.currentSateTxtBox);
             this.Controls.Add(this.retunBTN);
-            this.Controls.Add(this.saveBTN);
             this.Controls.Add(this.descriptionTxtBox);
             this.Controls.Add(this.descriptionLbl);
             this.Controls.Add(this.TaskLBL);
             this.Name = "Task";
             this.Text = "Task";
+            ((System.ComponentModel.ISupportInitialize)(this.sprintNumUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,13 +331,10 @@
         private System.Windows.Forms.Label TaskLBL;
         private System.Windows.Forms.Label descriptionLbl;
         private System.Windows.Forms.RichTextBox descriptionTxtBox;
-        private System.Windows.Forms.Button saveBTN;
         private System.Windows.Forms.Button retunBTN;
         private System.Windows.Forms.Label dateCreationLBL;
         private System.Windows.Forms.Label deadLineLBL;
-        private System.Windows.Forms.TextBox currentSateTxtBox;
         private System.Windows.Forms.Label currentStateLBL;
-        private System.Windows.Forms.TextBox sprintTxtBox;
         private System.Windows.Forms.Label SprintLBL;
         private System.Windows.Forms.TextBox estimatedTimeTxtBox;
         private System.Windows.Forms.Label estimatedTimeLBL;
@@ -322,5 +344,8 @@
         private System.Windows.Forms.ListBox MembersListBox;
         private System.Windows.Forms.Button addMemberBTN;
         private System.Windows.Forms.ListBox ListedMembersListBox;
+        private System.Windows.Forms.ComboBox currentSateCBox;
+        private System.Windows.Forms.NumericUpDown sprintNumUpDown;
+        private System.Windows.Forms.Button deleteMemberBtn;
     }
 }

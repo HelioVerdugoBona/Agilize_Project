@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,28 +10,55 @@ namespace Agilize
 {
     public class Tasks
     {
-        public DateTimePicker dateCreation {  get; set; }
 
-        public DateTimePicker deadLine { get; set; }
+        public String TaskName {  get; set; }
 
-        public Enum currentState { get; set; }
+        public String Description { get; set; }
 
-        public int sprint {  get; set; }
+        public String DateCreation {  get; set; }
 
-        public String estimatedTime { get; set; }
+        public String DeadLine { get; set; }
+
+        public TaskState CurrentState { get; set; }
+
+        public int Sprint {  get; set; }
+
+        public String EstimatedTime { get; set; }
+
+        public BindingList<Users> TaskMembers { get; set; }
 
         public Tasks()
         {
-
+            TaskMembers = new BindingList<Users>();
         }
 
-        public Tasks(DateTimePicker dateCreation, DateTimePicker deadLine, Enum currentState, int sprint, string estimatedTime)
+        public Tasks(String taskName, String description, String dateCreation, String deadLine, TaskState currentState, int sprint, string estimatedTime, BindingList<Users> taskMembers)
         {
-            this.dateCreation = dateCreation;
-            this.deadLine = deadLine;
-            this.currentState = currentState;
-            this.sprint = sprint;
-            this.estimatedTime = estimatedTime;
+            TaskMembers = new BindingList<Users>();
+            this.TaskName = taskName;
+            this.Description = description;
+            this.DateCreation = dateCreation;
+            this.DeadLine = deadLine;
+            this.CurrentState = currentState;
+            this.Sprint = sprint;
+            this.EstimatedTime = estimatedTime;
+            this.TaskMembers = taskMembers;
         }
+
+
+        override public String ToString()
+        {
+            return TaskName.ToString();
+        }
+
+    }
+    public enum TaskState
+    {
+        BackLog,
+        ToDo,
+        Doing,
+        Pending_Confirmation,
+        Done
+
     }
 }

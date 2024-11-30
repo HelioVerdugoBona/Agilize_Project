@@ -19,8 +19,6 @@ namespace Agilize
         public String nickname {  get; set; }
 
         public List<String> projectsList { get; set; }
-
-
         public Users() { }
 
         public Users(string name, string surname, string password, string email, string nickname, List<String> projectsList)
