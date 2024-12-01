@@ -200,7 +200,6 @@
             this.MembersListBox.Name = "MembersListBox";
             this.MembersListBox.Size = new System.Drawing.Size(314, 121);
             this.MembersListBox.TabIndex = 21;
-            this.MembersListBox.SelectedIndexChanged += new System.EventHandler(this.MembersListBox_SelectedIndexChanged);
             // 
             // addMemberBTN
             // 
@@ -225,7 +224,6 @@
             this.ListedMembersListBox.Name = "ListedMembersListBox";
             this.ListedMembersListBox.Size = new System.Drawing.Size(314, 134);
             this.ListedMembersListBox.TabIndex = 23;
-            this.ListedMembersListBox.SelectedIndexChanged += new System.EventHandler(this.ListedMembersListBox_SelectedIndexChanged);
             // 
             // currentSateCBox
             // 

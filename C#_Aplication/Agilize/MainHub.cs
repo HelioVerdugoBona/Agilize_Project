@@ -1,33 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Agilize
 {
     public partial class MainHub : Form
     {
-       
+
         Users user;
         String pathToProjectFiles;
+
         public MainHub(Users user, String pathToProjectFiles)
         {
-            this.user = new Users();
             InitializeComponent();
+            this.user = new Users();
             this.user = user;
-            SetAllLbls();
             this.pathToProjectFiles = pathToProjectFiles;
+            SetAllLbls();
+
         }
 
         public MainHub(Users user)
         {
             InitializeComponent();
             SetAllLbls();
+            this.user = new Users();
             this.user = user;
         }
 
@@ -39,12 +35,33 @@ namespace Agilize
             projectFoldersLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             acountLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             SettingLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            foreach(var project in user.projectsList)
+            if (user.projectsList != null)
             {
-                ProjectLBox.Items.Add(project);
+                foreach (var project in user.projectsList)
+                {
+                    ProjectLBox.Items.Add(project);
+                }
             }
-            
         }
+
+        private void ProjectLBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String projectName = (String)ProjectLBox.SelectedItem;
+
+            if (projectName != null)
+            {
+                foreach (var existentProject in user.projectsList)
+                {
+                    if (projectName.Equals(existentProject))
+                    {
+                        ProjectWindow project = new ProjectWindow(user, pathToProjectFiles, existentProject, false);
+                        project.Show();
+                        this.Close();
+                    }
+                }
+            }
+        }
+
 
         private void homeLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -133,11 +150,6 @@ namespace Agilize
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ProjectLBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
