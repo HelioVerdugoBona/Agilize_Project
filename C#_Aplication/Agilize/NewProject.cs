@@ -13,12 +13,13 @@ namespace Agilize
     public partial class NewProject : Form
     {
 
-        Projects projects = new Projects();
+        Projects projects;
         Users user;
         String pathToProjectFiles;
         public NewProject(Users user, String pathToProjectFiles)
         {
             InitializeComponent();
+            projects = new Projects();
             this.user = new Users();
             this.user = user;
             this.pathToProjectFiles = pathToProjectFiles;
@@ -50,8 +51,17 @@ namespace Agilize
 
         private void acceptBtn_Click(object sender, EventArgs e)
         {
+             if (user.projectsList == null)
+             {
+                 BindingList<String> firstProject = new BindingList<String>();
+                 firstProject.Add(projects.projectName);
+                 user.projectsList = firstProject;
+             }
+             else
+             {
             user.projectsList.Add(projects.projectName);
-            ProjectWindow project = new ProjectWindow(user,pathToProjectFiles,projects);
+             }
+            ProjectWindow project = new ProjectWindow(user,pathToProjectFiles,projects.projectName,true);
             project.Show();
             this.Close();
         }

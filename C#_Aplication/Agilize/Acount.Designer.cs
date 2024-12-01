@@ -51,11 +51,12 @@
             this.surnamesTxtBox = new System.Windows.Forms.TextBox();
             this.nameTxtBox = new System.Windows.Forms.TextBox();
             this.PaswordTxtBox = new System.Windows.Forms.TextBox();
-            this.NicknameTxtBox = new System.Windows.Forms.TextBox();
             this.mailTxtBox = new System.Windows.Forms.TextBox();
             this.bigAcountLBL = new System.Windows.Forms.Label();
             this.deleteAcountBtn = new System.Windows.Forms.Button();
             this.saveBTN = new System.Windows.Forms.Button();
+            this.confirmPswrdTxtBox = new System.Windows.Forms.TextBox();
+            this.confirmPswrdLbl = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).BeginInit();
@@ -348,7 +349,7 @@
             // 
             this.PaswordTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
             this.PaswordTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 29F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaswordTxtBox.Location = new System.Drawing.Point(405, 507);
+            this.PaswordTxtBox.Location = new System.Drawing.Point(405, 382);
             this.PaswordTxtBox.Name = "PaswordTxtBox";
             this.PaswordTxtBox.ShortcutsEnabled = false;
             this.PaswordTxtBox.Size = new System.Drawing.Size(611, 51);
@@ -357,18 +358,6 @@
             this.PaswordTxtBox.UseSystemPasswordChar = true;
             this.PaswordTxtBox.Enter += new System.EventHandler(this.PaswordTxtBox_Enter);
             this.PaswordTxtBox.Leave += new System.EventHandler(this.PaswordTxtBox_Leave);
-            // 
-            // NicknameTxtBox
-            // 
-            this.NicknameTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
-            this.NicknameTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 29F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NicknameTxtBox.Location = new System.Drawing.Point(405, 392);
-            this.NicknameTxtBox.Name = "NicknameTxtBox";
-            this.NicknameTxtBox.Size = new System.Drawing.Size(611, 51);
-            this.NicknameTxtBox.TabIndex = 2;
-            this.NicknameTxtBox.Text = "Nickname";
-            this.NicknameTxtBox.Enter += new System.EventHandler(this.NicknameTxtBox_Enter);
-            this.NicknameTxtBox.Leave += new System.EventHandler(this.NicknameTxtBox_Leave);
             // 
             // mailTxtBox
             // 
@@ -397,18 +386,19 @@
             // 
             // deleteAcountBtn
             // 
-            this.deleteAcountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
+            this.deleteAcountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(107)))), ((int)(((byte)(53)))));
             this.deleteAcountBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteAcountBtn.FlatAppearance.BorderSize = 0;
             this.deleteAcountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteAcountBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 29F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteAcountBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.deleteAcountBtn.ForeColor = System.Drawing.Color.Black;
             this.deleteAcountBtn.Location = new System.Drawing.Point(738, 691);
             this.deleteAcountBtn.Name = "deleteAcountBtn";
             this.deleteAcountBtn.Size = new System.Drawing.Size(278, 58);
             this.deleteAcountBtn.TabIndex = 19;
             this.deleteAcountBtn.Text = "Delete Acount";
             this.deleteAcountBtn.UseVisualStyleBackColor = false;
+            this.deleteAcountBtn.Click += new System.EventHandler(this.deleteAcountBtn_Click);
             // 
             // saveBTN
             // 
@@ -422,6 +412,36 @@
             this.saveBTN.Size = new System.Drawing.Size(90, 60);
             this.saveBTN.TabIndex = 20;
             this.saveBTN.UseVisualStyleBackColor = false;
+            this.saveBTN.Click += new System.EventHandler(this.saveBTN_Click);
+            // 
+            // confirmPswrdTxtBox
+            // 
+            this.confirmPswrdTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
+            this.confirmPswrdTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 29F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPswrdTxtBox.Location = new System.Drawing.Point(405, 507);
+            this.confirmPswrdTxtBox.Name = "confirmPswrdTxtBox";
+            this.confirmPswrdTxtBox.ShortcutsEnabled = false;
+            this.confirmPswrdTxtBox.Size = new System.Drawing.Size(611, 51);
+            this.confirmPswrdTxtBox.TabIndex = 21;
+            this.confirmPswrdTxtBox.Text = "Password";
+            this.confirmPswrdTxtBox.UseSystemPasswordChar = true;
+            this.confirmPswrdTxtBox.Enter += new System.EventHandler(this.confirmPswrdTxtBox_Enter);
+            this.confirmPswrdTxtBox.Leave += new System.EventHandler(this.confirmPswrdTxtBox_Leave);
+            // 
+            // confirmPswrdLbl
+            // 
+            this.confirmPswrdLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
+            this.confirmPswrdLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.confirmPswrdLbl.FlatAppearance.BorderSize = 0;
+            this.confirmPswrdLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmPswrdLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPswrdLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.confirmPswrdLbl.Location = new System.Drawing.Point(405, 460);
+            this.confirmPswrdLbl.Name = "confirmPswrdLbl";
+            this.confirmPswrdLbl.Size = new System.Drawing.Size(290, 41);
+            this.confirmPswrdLbl.TabIndex = 22;
+            this.confirmPswrdLbl.Text = "Confirm Password";
+            this.confirmPswrdLbl.UseVisualStyleBackColor = false;
             // 
             // Acount
             // 
@@ -429,6 +449,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(1094, 761);
+            this.Controls.Add(this.confirmPswrdLbl);
+            this.Controls.Add(this.confirmPswrdTxtBox);
             this.Controls.Add(this.saveBTN);
             this.Controls.Add(this.deleteAcountBtn);
             this.Controls.Add(this.bigAcountLBL);
@@ -436,9 +458,8 @@
             this.Controls.Add(this.surnamesTxtBox);
             this.Controls.Add(this.nameTxtBox);
             this.Controls.Add(this.Menu);
-            this.Controls.Add(this.NicknameTxtBox);
             this.Controls.Add(this.mailTxtBox);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Acount";
             this.Text = "Acount";
             this.Menu.ResumeLayout(false);
@@ -481,11 +502,12 @@
         private System.Windows.Forms.TextBox surnamesTxtBox;
         private System.Windows.Forms.TextBox nameTxtBox;
         private System.Windows.Forms.TextBox PaswordTxtBox;
-        private System.Windows.Forms.TextBox NicknameTxtBox;
         private System.Windows.Forms.TextBox mailTxtBox;
         private System.Windows.Forms.Label bigAcountLBL;
         private System.Windows.Forms.Button deleteAcountBtn;
         private System.Windows.Forms.Button saveBTN;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox confirmPswrdTxtBox;
+        private System.Windows.Forms.Button confirmPswrdLbl;
     }
 }

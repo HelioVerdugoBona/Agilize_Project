@@ -17,41 +17,28 @@ namespace Agilize
     {
         Users user;
         String pathToProjectFiles;
+        String thisProjectFolder;
         Projects projects;
 
-        public ProjectWindow(Users user,String pathToProjectFiles)
+        public ProjectWindow(Users user, String pathToProjectFiles, String projectName,Boolean newProject)
         {
             InitializeComponent();
-            SetAllLbls();
-            this.user = user;
-            this.pathToProjectFiles = pathToProjectFiles;
+            this.projects = new Projects();
+            this.projects.projectName = projectName;
+            thisProjectFolder = pathToProjectFiles + "\\" + projectName;
+
+            if (newProject){ IsNewProject(); }
+            else {  IsNotNewProject(); }
+
+            SetAll(user, pathToProjectFiles);
         }
 
-        public ProjectWindow(Users user, String pathToProjectFiles, Projects project)
-        {
-            InitializeComponent();
-            SetAll(user, pathToProjectFiles, project);
-            IsNewProject();
-        }
-
-        private void SetAll(Users user, String pathToProjectFiles, Projects project)
+        private void SetAll(Users user, String pathToProjectFiles)
         {
             this.user = user;
             this.pathToProjectFiles = pathToProjectFiles;
-            this.projects = project;
-            pruebaTasks();
             SetAllLbls();
             SetAllLBoxs();
-        }
-
-        private void pruebaTasks()
-        {
-            BindingList<Users> lista = new BindingList<Users>();
-            lista.Add(user);
-            Tasks tasks = new Tasks("First Task", "No hay descripcion", "30/11/2024 00:00:00", "30/11/2024 00:00:00", TaskState.ToDo, 3, "4h", lista);
-            BindingList<Tasks> taska = new BindingList<Tasks>();
-            taska.Add(tasks);
-            projects.arrayTasks = taska;
         }
 
         private void SetAllLBoxs()
@@ -90,8 +77,23 @@ namespace Agilize
         private void IsNewProject()
         {
             ChangeJSONProperties();
-            string appFolder = Path.Combine(pathToProjectFiles, projects.projectName);
-            Directory.CreateDirectory(appFolder);
+            Directory.CreateDirectory(thisProjectFolder);
+        }
+
+        private void IsNotNewProject()
+        {
+
+            if (!File.Exists(thisProjectFolder + "\\" + this.projects.projectName + ".json"))
+            {
+                File.Create(thisProjectFolder + "\\" + this.projects.projectName + ".json").Close(); // Crea y cierra el archivo
+            }
+            else { 
+                string jsonContent = File.ReadAllText(thisProjectFolder + "\\" + this.projects.projectName + ".json");
+                if (!string.IsNullOrWhiteSpace(jsonContent))
+                {
+                    projects = System.Text.Json.JsonSerializer.Deserialize<Projects>(jsonContent);
+                }
+            }
         }
 
         private void ChangeJSONProperties()
@@ -241,7 +243,15 @@ namespace Agilize
 
         private void saveBTN_Click(object sender, EventArgs e)
         {
+            if (!File.Exists(thisProjectFolder + "\\" + this.projects.projectName + ".json"))
+            {
+                File.Create(thisProjectFolder + "\\" + this.projects.projectName + ".json").Close(); // Crea y cierra el archivo
+            }
+   
+            string newJsonContent = System.Text.Json.JsonSerializer.Serialize(projects, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(thisProjectFolder + "\\" + this.projects.projectName + ".json", newJsonContent);
 
+            MessageBox.Show("Proyecto guardado con exito.", "Guardado éxitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void updateTasks(BindingList<Tasks> actualTasks)

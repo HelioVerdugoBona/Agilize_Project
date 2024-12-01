@@ -1,10 +1,15 @@
-﻿using System;
+﻿using Org.BouncyCastle.Crypto.Engines;
+using Org.BouncyCastle.Crypto.Paddings;
+using Org.BouncyCastle.Crypto.Parameters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +19,7 @@ namespace Agilize
     {
         Users user;
         String pathToProjectFiles;
+        String newPswrd;
         public Acount(Users user, String pathToProjectFiles)
         {
             InitializeComponent();
@@ -132,6 +138,10 @@ namespace Agilize
                 nameTxtBox.Text = "Name";
                 nameTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
             }
+            else
+            {
+                user.name = nameTxtBox.Text;
+            }
         }
 
         private void surnamesTxtBox_Enter(object sender, EventArgs e)
@@ -149,6 +159,10 @@ namespace Agilize
             {
                 surnamesTxtBox.Text = "Surnames";
                 surnamesTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
+            }
+            else
+            {
+                user.surname = surnamesTxtBox.Text;
             }
         }
 
@@ -168,23 +182,9 @@ namespace Agilize
                 mailTxtBox.Text = "Email";
                 mailTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
             }
-        }
-
-        private void NicknameTxtBox_Enter(object sender, EventArgs e)
-        {
-            if (NicknameTxtBox.Text == "Nickname")
+            else
             {
-                NicknameTxtBox.Text = "";
-                NicknameTxtBox.ForeColor = SystemColors.WindowText; // Cambiar a color normal
-            }
-        }
-
-        private void NicknameTxtBox_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(NicknameTxtBox.Text))
-            {
-                NicknameTxtBox.Text = "Nickname";
-                NicknameTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
+                user.email = mailTxtBox.Text;
             }
         }
 
@@ -204,6 +204,148 @@ namespace Agilize
                 PaswordTxtBox.Text = "Password";
                 PaswordTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
             }
+            else
+            {
+                newPswrd = PaswordTxtBox.Text;
+            }
+        }
+
+        private void confirmPswrdTxtBox_Enter(object sender, EventArgs e)
+        {
+            if (confirmPswrdTxtBox.Text == "Password")
+            {
+                confirmPswrdTxtBox.Text = "";
+                confirmPswrdTxtBox.ForeColor = SystemColors.WindowText; // Cambiar a color normal
+            }
+        }
+
+        private void confirmPswrdTxtBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(confirmPswrdTxtBox.Text))
+            {
+                confirmPswrdTxtBox.Text = "Password";
+                confirmPswrdTxtBox.ForeColor = SystemColors.GrayText; // Cambiar a color gris
+            }
+            else
+            {
+                String newPswrdConfirmation = confirmPswrdTxtBox.Text;
+
+                if (newPswrd.Equals(newPswrdConfirmation))
+                {
+                    user.password = EncryptPassword(newPswrdConfirmation);
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas no coinciden","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    confirmPswrdTxtBox.Text = "Password";
+                    PaswordTxtBox.Text = "Password";
+                }
+
+            }
+        }
+
+
+        public string EncryptPassword(string pswd)
+        {
+            var engine = new BlowfishEngine();
+            var blockCipher = new PaddedBufferedBlockCipher(engine);
+            var keyBytes = Encoding.UTF8.GetBytes("f83jsd74jdue0qnd");
+            blockCipher.Init(true, new KeyParameter(keyBytes));
+
+            var inputBytes = Encoding.UTF8.GetBytes(pswd);
+            var outputBytes = new byte[blockCipher.GetOutputSize(inputBytes.Length)];
+
+            var length = blockCipher.ProcessBytes(inputBytes, 0, inputBytes.Length, outputBytes, 0);
+            blockCipher.DoFinal(outputBytes, length);
+
+            return Convert.ToBase64String(outputBytes);
+        }
+
+        private void deleteAcountBtn_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Esta seguro de querer borrar su cuenta? Esto será PERMANENTE","Borrar Cuenta", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                if (ValidateUser())
+                {
+                    if (!File.Exists(pathToProjectFiles + "\\Users.json"))
+                    {
+                        File.Create(pathToProjectFiles + "\\Users.json").Close(); // Crea y cierra el archivo
+                    }
+
+                    // Leer usuarios existentes del archivo JSON
+                    List<Users> usersList = new List<Users>();
+                    string jsonContent = File.ReadAllText(pathToProjectFiles + "\\Users.json");
+                    if (!string.IsNullOrWhiteSpace(jsonContent))
+                    {
+                        usersList = System.Text.Json.JsonSerializer.Deserialize<List<Users>>(jsonContent);
+                    }
+                    foreach (var user in usersList)
+                    {
+                        if (user.nickname.Equals(this.user.nickname))
+                        {
+                            usersList.Remove(user);
+                            break;
+                        }
+                    }
+
+                    string newJsonContent = System.Text.Json.JsonSerializer.Serialize(usersList, new JsonSerializerOptions { WriteIndented = true });
+                    File.WriteAllText(pathToProjectFiles + "\\Users.json", newJsonContent);
+
+                    MessageBox.Show("Se ha eliminado su cuenta con éxito. \n ¡Hasta luego y gracias por el pescado!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor introduce parametros validos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void saveBTN_Click(object sender, EventArgs e)
+        {
+            if (ValidateUser())
+            {
+                if (!File.Exists(pathToProjectFiles + "\\Users.json"))
+                {
+                    File.Create(pathToProjectFiles + "\\Users.json").Close(); // Crea y cierra el archivo
+                }
+
+                // Leer usuarios existentes del archivo JSON
+                List<Users> usersList = new List<Users>();
+                string jsonContent = File.ReadAllText(pathToProjectFiles + "\\Users.json");
+                if (!string.IsNullOrWhiteSpace(jsonContent))
+                {
+                    usersList = System.Text.Json.JsonSerializer.Deserialize<List<Users>>(jsonContent);
+                }
+                foreach (var user in usersList)
+                {
+                    if (user.nickname.Equals(this.user.nickname))
+                    {
+                        usersList.Remove(user);
+                        usersList.Add(this.user);
+                        break;
+                    }
+                }
+ 
+                string newJsonContent = System.Text.Json.JsonSerializer.Serialize(usersList, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(pathToProjectFiles + "\\Users.json", newJsonContent);
+
+                MessageBox.Show("Datos actualizados con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Por favor introduce parametros validos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ValidateUser()
+        {
+            return !string.IsNullOrWhiteSpace(user.name) &&
+                   !string.IsNullOrWhiteSpace(user.surname) &&
+                   !string.IsNullOrWhiteSpace(user.email) &&
+                   !string.IsNullOrWhiteSpace(user.nickname) &&
+                   !string.IsNullOrWhiteSpace(user.password);
         }
     }
 }

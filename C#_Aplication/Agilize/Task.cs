@@ -199,15 +199,15 @@ namespace Agilize
 
         private void retunBTN_Click(object sender, EventArgs e)
         {
-            if (tasksList.Count == 0)
+            ValidateTask();
+            if (tasksList == null)
             {
-                ValidateTask();
+                tasksList = new BindingList<Tasks>();
+
                 tasksList.Add(task);
             }
             else
             {
-                ValidateTask();
-
                 if (isnewTask)
                 {
                     tasksList.Add(task);
