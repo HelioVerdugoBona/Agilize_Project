@@ -22,6 +22,13 @@ namespace Agilize
         public BindingList<String> projectsList { get; set; }
         public Users() { }
 
+        public Users(string email, string nickname, string password)
+        {
+            this.email = email;
+            this.nickname = nickname;
+            this.password = password;
+        }
+
         public Users(string name, string surname, string password, string email, string nickname, BindingList<String> projectsList)
         {
             projectsList = new BindingList<String>();
@@ -31,6 +38,11 @@ namespace Agilize
             this.email = email;
             this.nickname = nickname;
             this.projectsList = projectsList;
+        }
+
+        override public String ToString()
+        {
+            return nickname.ToString();
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Agilize
              }
              else
              {
-            user.projectsList.Add(projects.projectName);
+                user.projectsList.Add(projects.projectName);
              }
             ProjectWindow project = new ProjectWindow(user,pathToProjectFiles,projects.projectName,true);
             project.Show();

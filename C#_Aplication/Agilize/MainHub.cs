@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Agilize
 {
     public partial class MainHub : Form
     {
-       
+
         Users user;
         String pathToProjectFiles;
 
@@ -53,7 +46,7 @@ namespace Agilize
 
         private void ProjectLBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String projectName = (String) ProjectLBox.SelectedItem;
+            String projectName = (String)ProjectLBox.SelectedItem;
 
             if (projectName != null)
             {
@@ -61,7 +54,7 @@ namespace Agilize
                 {
                     if (projectName.Equals(existentProject))
                     {
-                        ProjectWindow project = new ProjectWindow(user, pathToProjectFiles, existentProject,false);
+                        ProjectWindow project = new ProjectWindow(user, pathToProjectFiles, existentProject, false);
                         project.Show();
                         this.Close();
                     }

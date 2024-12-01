@@ -24,9 +24,12 @@ namespace Agilize
         {
             InitializeComponent();
             this.projects = new Projects();
+            this.user = new Users();
+            this.user = user;
             this.projects.projectName = projectName;
+            this.projects.projectOwner = user.nickname;
             thisProjectFolder = pathToProjectFiles + "\\" + projectName;
-
+            this.pathToProjectFiles = pathToProjectFiles;
             if (newProject){ IsNewProject(); }
             else {  IsNotNewProject(); }
 
@@ -76,6 +79,14 @@ namespace Agilize
 
         private void IsNewProject()
         {
+            if (projects.arrayProjectUsers == null)
+            {
+                projects.arrayProjectUsers = new BindingList<Users> { user };
+            }
+            else
+            {
+                projects.arrayProjectUsers.Add(user);
+            }
             ChangeJSONProperties();
             Directory.CreateDirectory(thisProjectFolder);
         }
@@ -145,13 +156,13 @@ namespace Agilize
 
         private void manageMembersLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ManageMembers manageMembers = new ManageMembers(user, pathToProjectFiles);
+            ManageMembers manageMembers = new ManageMembers(user, pathToProjectFiles,projects);
             manageMembers.ShowDialog();
         }
 
         private void manageMembersIMG_Click(object sender, EventArgs e)
         {
-            ManageMembers manageMembers = new ManageMembers(user, pathToProjectFiles);
+            ManageMembers manageMembers = new ManageMembers(user, pathToProjectFiles, projects);
             manageMembers.ShowDialog();
         }
 
@@ -213,31 +224,31 @@ namespace Agilize
 
         private void backLogLBL_Click(object sender, EventArgs e)
         {
-            NewTask newtask = new NewTask(this, projects.arrayTasks, user, TaskState.BackLog);
+            NewTask newtask = new NewTask(this, projects.arrayTasks, user, TaskState.BackLog, projects.arrayProjectUsers);
             newtask.ShowDialog();
         }
 
         private void toDoLBL_Click(object sender, EventArgs e)
         {
-            NewTask newtask = new NewTask(this, projects.arrayTasks, user, TaskState.ToDo);
+            NewTask newtask = new NewTask(this, projects.arrayTasks, user, TaskState.ToDo, projects.arrayProjectUsers);
             newtask.ShowDialog();
         }
 
         private void doingLBL_Click(object sender, EventArgs e)
         {
-            NewTask newtask = new NewTask(this, projects.arrayTasks, user, TaskState.Doing);
+            NewTask newtask = new NewTask(this, projects.arrayTasks, user, TaskState.Doing, projects.arrayProjectUsers);
             newtask.ShowDialog();
         }
 
         private void pendingConfirmationLBL_Click(object sender, EventArgs e)
         {
-            NewTask newtask = new NewTask(this, projects.arrayTasks, user, TaskState.Pending_Confirmation);
+            NewTask newtask = new NewTask(this, projects.arrayTasks, user, TaskState.Pending_Confirmation, projects.arrayProjectUsers);
             newtask.ShowDialog();
         }
 
         private void doneLBL_Click(object sender, EventArgs e)
         {
-            NewTask newtask = new NewTask(this, projects.arrayTasks, user, TaskState.Done);
+            NewTask newtask = new NewTask(this, projects.arrayTasks, user, TaskState.Done, projects.arrayProjectUsers);
             newtask.ShowDialog();
         }
 
@@ -290,7 +301,7 @@ namespace Agilize
             Tasks selectedTask = (Tasks)selectedListBox.SelectedItem;
             if (selectedTask != null)
             {
-                Task task = new Task(this, projects.arrayTasks, selectedTask, user);
+                Task task = new Task(this, projects.arrayTasks, selectedTask, user,projects.arrayProjectUsers);
                 task.ShowDialog();
             }
         }

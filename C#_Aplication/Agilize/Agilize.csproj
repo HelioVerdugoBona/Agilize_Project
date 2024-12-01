@@ -145,6 +145,7 @@
       <DependentUpon>ProjectFolders.cs</DependentUpon>
     </Compile>
     <Compile Include="Projects.cs" />
+    <Compile Include="ProjectUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>

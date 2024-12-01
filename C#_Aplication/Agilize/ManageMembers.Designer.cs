@@ -36,7 +36,7 @@
             this.NicknameTxtBox = new System.Windows.Forms.TextBox();
             this.manageMembersLbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.membersofAgilze = new System.Windows.Forms.ListBox();
+            this.membersofAgilize = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.addMemberBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -44,7 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.deleteMemberbtn = new System.Windows.Forms.Button();
             this.retunBTN = new System.Windows.Forms.Button();
-            this.saveBTN = new System.Windows.Forms.Button();
             this.createMembersBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -145,7 +144,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
-            this.groupBox1.Controls.Add(this.membersofAgilze);
+            this.groupBox1.Controls.Add(this.membersofAgilize);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.addMemberBtn);
             this.groupBox1.Location = new System.Drawing.Point(418, 111);
@@ -154,13 +153,13 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
-            // membersofAgilze
+            // membersofAgilize
             // 
-            this.membersofAgilze.FormattingEnabled = true;
-            this.membersofAgilze.Location = new System.Drawing.Point(34, 64);
-            this.membersofAgilze.Name = "membersofAgilze";
-            this.membersofAgilze.Size = new System.Drawing.Size(300, 147);
-            this.membersofAgilze.TabIndex = 15;
+            this.membersofAgilize.FormattingEnabled = true;
+            this.membersofAgilize.Location = new System.Drawing.Point(34, 64);
+            this.membersofAgilize.Name = "membersofAgilize";
+            this.membersofAgilize.Size = new System.Drawing.Size(300, 147);
+            this.membersofAgilize.TabIndex = 15;
             // 
             // label2
             // 
@@ -252,20 +251,6 @@
             this.retunBTN.UseVisualStyleBackColor = false;
             this.retunBTN.Click += new System.EventHandler(this.retunBTN_Click);
             // 
-            // saveBTN
-            // 
-            this.saveBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
-            this.saveBTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveBTN.FlatAppearance.BorderSize = 0;
-            this.saveBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBTN.Image = global::Agilize.Properties.Resources.saveIMG;
-            this.saveBTN.Location = new System.Drawing.Point(952, 9);
-            this.saveBTN.Name = "saveBTN";
-            this.saveBTN.Size = new System.Drawing.Size(90, 60);
-            this.saveBTN.TabIndex = 17;
-            this.saveBTN.UseVisualStyleBackColor = false;
-            this.saveBTN.Click += new System.EventHandler(this.saveBTN_Click);
-            // 
             // ManageMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,7 +258,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(1184, 511);
             this.Controls.Add(this.retunBTN);
-            this.Controls.Add(this.saveBTN);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.manageMembersLbl);
@@ -306,9 +290,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button deleteMemberbtn;
-        private System.Windows.Forms.ListBox membersofAgilze;
+        private System.Windows.Forms.ListBox membersofAgilize;
         private System.Windows.Forms.ListBox projectMembers;
         private System.Windows.Forms.Button retunBTN;
-        private System.Windows.Forms.Button saveBTN;
     }
 }

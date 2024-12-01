@@ -15,15 +15,18 @@ namespace Agilize
     {
         BindingList<Tasks> tasksList;
         ProjectWindow projectWindow;
+        BindingList<Users> projectMembers;
         Users user;
         Tasks task;
         Tasks oldTask;
         Boolean isnewTask;
-        public Task(ProjectWindow projectWindow, BindingList<Tasks> tasksList,Tasks task, Users user)
+        public Task(ProjectWindow projectWindow, BindingList<Tasks> tasksList,Tasks task, Users user, BindingList<Users> projectMembers)
         {
             InitializeComponent();
             this.task = new Tasks();
             oldTask = new Tasks();
+            this.projectMembers = new BindingList<Users>();
+            this.projectMembers = projectMembers;
             isnewTask = false;
             this.tasksList = tasksList;
             this.projectWindow = projectWindow;
@@ -32,12 +35,14 @@ namespace Agilize
             SetAll(false);
         }
 
-        public Task(ProjectWindow projectWindow, BindingList<Tasks> tasksList, Users user,String taskName,TaskState state)
+        public Task(ProjectWindow projectWindow, BindingList<Tasks> tasksList, Users user,String taskName,TaskState state, BindingList<Users> projectMembers)
         {
             InitializeComponent();
             task = new Tasks();
             this.tasksList = tasksList;
             this.projectWindow = projectWindow;
+            this.projectMembers = new BindingList<Users>();
+            this.projectMembers = projectMembers;
             this.user = user;
             isnewTask = true;
             task.CurrentState = state;
@@ -58,6 +63,45 @@ namespace Agilize
             {
                 SetAllLbls();
             }
+            SetAllLBox();
+        }
+
+        private void SetAllLBox()
+        {
+            if (projectMembers != null)
+            {
+                if (task.TaskMembers != null)
+                {
+                    foreach (var userProject in this.projectMembers)
+                    {
+                        if (userProject != null && !task.TaskMembers.Contains(userProject))
+                        {
+                            MembersListBox.Items.Add(userProject);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var userProject in this.projectMembers)
+                    {
+                        if (userProject != null)
+                        {
+                            MembersListBox.Items.Add(userProject);
+                        }
+                    }
+                }
+            }
+            if (task.TaskMembers != null)
+            {
+                foreach(var userTask in this.task.TaskMembers)
+                {
+                    if (userTask != null)
+                    {
+                        ListedMembersListBox.Items.Add(userTask);
+                    }
+                }
+            }
+           
         }
 
         private void SetAllLblsFirstTime()
@@ -105,10 +149,6 @@ namespace Agilize
             path.CloseAllFigures();
 
             btn.Region = new Region(path);
-        }
-        private void saveBTN_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ValidateTask()
@@ -165,10 +205,6 @@ namespace Agilize
             task.EstimatedTime = estimatedTimeTxtBox.Text;
         }
 
-        private void ListedMembersListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         private void deleteMemberBtn_Click(object sender, EventArgs e)
         {
             if (ListedMembersListBox.SelectedItem == null)
@@ -177,23 +213,39 @@ namespace Agilize
             }
             else
             {
-
+                Users deletedUser = (Users)ListedMembersListBox.SelectedItem;
+                if (deletedUser != null)
+                {
+                    MembersListBox.Items.Add(deletedUser);
+                    ListedMembersListBox.Items.Remove(deletedUser);
+                    task.TaskMembers.Remove(deletedUser);
+                }
             }
-        }
-        private void MembersListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void addMemberBTN_Click(object sender, EventArgs e)
         {
-            if (ListedMembersListBox.SelectedItem == null)
+            if (MembersListBox.SelectedItem == null)
             {
                 MessageBox.Show("No hay ningun miembro seleccionado", "Add Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                Users addedUsers = (Users)MembersListBox.SelectedItem;
+                if (addedUsers != null)
+                {
+                    ListedMembersListBox.Items.Add(addedUsers);
+                    MembersListBox.Items.Remove(addedUsers);
 
+                    if (task.TaskMembers == null)
+                    {
+                        task.TaskMembers = new BindingList<Users> { addedUsers };
+                    }
+                    else
+                    {
+                        task.TaskMembers.Add(addedUsers);
+                    }
+                }
             }
         }
 
@@ -202,9 +254,7 @@ namespace Agilize
             ValidateTask();
             if (tasksList == null)
             {
-                tasksList = new BindingList<Tasks>();
-
-                tasksList.Add(task);
+                tasksList = new BindingList<Tasks> { task };
             }
             else
             {
