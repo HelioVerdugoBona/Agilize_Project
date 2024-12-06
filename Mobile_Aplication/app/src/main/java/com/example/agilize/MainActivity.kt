@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     private var arrayUsers = mutableListOf<Users>()
     private lateinit var user: Users
-
+    private lateinit var originalLanguaje: String
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,9 +51,7 @@ class MainActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(this@MainActivity, getString(R.string.login_error), Toast.LENGTH_SHORT).show()
             }
-
         }
-
     }
 
     private fun setAll() {
@@ -61,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         userPsw = findViewById(R.id.UserPassword)
         pswFrgt = findViewById(R.id.passwordForgoted)
         loginBtn = findViewById(R.id.loginBtn)
+        setLanguaje()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -128,7 +127,6 @@ class MainActivity : AppCompatActivity() {
                     return
                 }
                 val selectedItem = parent?.getItemAtPosition(position).toString()
-                Toast.makeText(this@MainActivity, "Seleccionaste: $selectedItem", Toast.LENGTH_SHORT).show()
              when (selectedItem)
                 {
                     "Castellano" -> changelanguaje("es")
@@ -137,7 +135,7 @@ class MainActivity : AppCompatActivity() {
                   }
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                // Acción opcional cuando no hay selección
+
             }
         }
     }
@@ -150,6 +148,16 @@ class MainActivity : AppCompatActivity() {
         resources.updateConfiguration(config, resources.displayMetrics)
         updateUI()
         saveLanguage(language)
+    }
+
+    private fun setLanguaje() {
+        val sharedPreferences = getSharedPreferences("settings", MODE_PRIVATE)
+        val selectedLanguage = sharedPreferences.getString("language", Locale.getDefault().language)
+        if (selectedLanguage != null) {
+            originalLanguaje = selectedLanguage
+            changelanguaje(selectedLanguage)
+
+        }
     }
 
     private fun updateUI() {

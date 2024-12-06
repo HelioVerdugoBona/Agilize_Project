@@ -1,90 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/Background"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ImageView
-      android:layout_width="105dp"
-      android:layout_height="100dp"
-      android:layout_gravity="center"
-      android:layout_marginBottom="146dp"
-      android:layout_marginTop="45dp"
-        android:background="@drawable/agilize_logo"
-      />
-
-
-  <EditText
-    android:id="@+id/UserNickname"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:textSize="24sp"
-    android:hint="@string/nickname"
-    android:fontFamily="@font/inter_variable_font"
-    android:layout_margin="10dp"
-    android:layout_gravity="center"
-    android:background="@drawable/rounded_edittext"
-    />
-
-<EditText
-    android:id="@+id/UserPassword"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:textSize="24sp"
-    android:password="true"
-    android:hint="@string/pasword"
-    android:fontFamily="@font/inter_variable_font"
-    android:layout_margin="10dp"
-    android:layout_gravity="center"
-    android:background="@drawable/rounded_edittext"
-    />
-
-<TextView
-    android:id="@+id/passwordForgoted"
-    android:textSize="16sp"
-    android:layout_gravity="end"
-    android:layout_marginHorizontal="15dp"
-    android:layout_marginBottom="80dp"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    android:text="@string/forgotpassword"
-    android:fontFamily="@font/inter_variable_font"
-    />
-
-    <Button
-        android:id="@+id/loginBtn"
-        android:backgroundTint="@color/Button"
-        android:textSize="24sp"
-        android:fontFamily="@font/inter_variable_font"
-        android:layout_height="wrap_content"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_margin="20dp"
-        android:text="Login"
-        />
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+    >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:spinnerMode="dropdown"
-        android:layout_gravity="center"
-        android:fontFamily="@font/inter_variable_font"
-        android:background="@color/Background"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+            <ImageView
+                android:layout_width="105dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="146dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/agilize_logo" />
 
-    <TextView
-        android:id="@+id/bottomText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/agilize"
-        android:fontFamily="@font/inter_variable_font"
-        android:textSize="16sp"
-        android:padding="16dp"
-        android:layout_gravity="center"/>
+            <EditText
+                android:id="@+id/UserNickname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="24sp"
+                android:hint="@string/nickname"
+                android:fontFamily="@font/inter_variable_font"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_edittext" />
+
+            <EditText
+                android:id="@+id/UserPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="24sp"
+                android:hint="@string/pasword"
+                android:fontFamily="@font/inter_variable_font"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/passwordForgoted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_gravity="end"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginBottom="80dp"
+                android:text="@string/forgotpassword"
+                android:fontFamily="@font/inter_variable_font" />
+
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Login"
+                android:backgroundTint="@color/Button"
+                android:textSize="24sp"
+                android:fontFamily="@font/inter_variable_font" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:layout_gravity="center"
+                android:fontFamily="@font/inter_variable_font"
+                android:background="@color/Background" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

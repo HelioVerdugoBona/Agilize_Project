@@ -54,5 +54,5 @@
     <string name="confirm_status_password">Comprovar Contrasenya</string>
     <string name="password_correlation_null">Introdueix un valor vàlid</string>
     <string name="password_correlation_error">Les dues contrasenyes no coincideixen</string>
-    <string name="agilize">©Agilize</string>
+
 </resources>

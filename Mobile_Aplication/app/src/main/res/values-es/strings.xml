@@ -54,5 +54,4 @@
     <string name="confirm_status_password">Comprobar Contraseña</string>
     <string name="password_correlation_null">Introduce un valor valido</string>
     <string name="password_correlation_error">Las dos contraseñas no coinciden</string>
-    <string name="agilize">©Agilize</string>
 </resources>
