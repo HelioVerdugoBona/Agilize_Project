@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_projects">Search Projects</string>
+    <string name="members">Members</string>
+    <string name="estimatedtime">EstimatedTime</string>
+</resources>

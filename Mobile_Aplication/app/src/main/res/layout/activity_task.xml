@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Focus"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/Button"
+            android:layout_marginBottom="16dp"
+            >
+
+            <ImageButton
+                android:id="@+id/returnBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.75"
+                android:background="@color/Orange"
+                android:src="@drawable/return_img"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/TxtTaskName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/task_name_window"
+                android:textColor="@color/white"
+                android:textSize="35sp"
+                android:fontFamily="@font/outfit_regular"
+                android:gravity="center"
+                />
+            <ImageButton
+                android:id="@+id/saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.75"
+                android:background="@color/Orange"
+                android:src="@drawable/save_img"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext_tasks"
+                android:layout_marginVertical="3dp">
+
+                <TextView
+                    android:id="@+id/TxtDateCreation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:minWidth="115dp"
+                    android:textAlignment="center"
+                    android:text="@string/date_creation"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edittext"/>
+
+                <EditText
+                    android:id="@+id/EtxtDateCreation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/error"
+                    android:fontFamily="@font/inter_variable_font"
+                    android:background="@android:color/transparent"
+                    android:enabled="false"
+                    tools:ignore="Autofill,LabelFor,TextFields"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext_tasks"
+                android:layout_marginVertical="3dp"
+                >
+
+                <TextView
+                    android:id="@+id/TxtDeadLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:minWidth="115dp"
+                    android:textAlignment="center"
+                    android:text="@string/deadline"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edittext"/>
+
+                <EditText
+                    android:id="@+id/EtxtDeadLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/error"
+                    android:fontFamily="@font/inter_variable_font"
+                    android:background="@android:color/transparent"
+                    android:enabled="false"
+                    tools:ignore="Autofill,LabelFor,TextFields"
+                    android:textAlignment="center"
+                />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext_tasks"
+                android:layout_marginVertical="3dp">
+
+                <TextView
+                    android:id="@+id/TxtCurrentState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:minWidth="115dp"
+                    android:textAlignment="center"
+                    android:text="@string/currentstate"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edittext"/>
+
+                <EditText
+                    android:id="@+id/EtxtCurrentState"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/error"
+                    android:fontFamily="@font/inter_variable_font"
+                    android:background="@android:color/transparent"
+                    android:enabled="false"
+                    tools:ignore="Autofill,LabelFor,TextFields"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext_tasks"
+                android:layout_marginVertical="3dp">
+
+                <TextView
+                    android:id="@+id/TxtSprint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:minWidth="115dp"
+                    android:text="@string/sprint"
+                    android:fontFamily="@font/inter_regular"
+                    android:textAlignment="center"
+                    android:background="@drawable/rounded_edittext"/>
+
+                <EditText
+                    android:id="@+id/EtxtSprint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/error"
+                    android:fontFamily="@font/inter_variable_font"
+                    android:background="@android:color/transparent"
+                    tools:ignore="Autofill,LabelFor,TextFields"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext_tasks"
+                android:layout_marginVertical="3dp">
+
+                <TextView
+                    android:id="@+id/TxtEstimatedTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:minWidth="115dp"
+                    android:textAlignment="center"
+                    android:text="@string/estimatedtime"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/rounded_edittext"/>
+
+                <EditText
+
+                    android:id="@+id/EtxtEstimatedTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/inter_variable_font"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/error"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext_projects"
+            android:orientation="vertical"
+            android:layout_margin="15dp"
+            >
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_textview_project2"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/members"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/outfit_regular"
+                    android:layout_gravity="center"
+                   />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:background="@color/Light_Background">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/RVTaskMembers"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/Focus"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="30dp">
+
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center|top"
+                    android:background="@drawable/rounded_textview_project"
+                    android:fontFamily="@font/outfit_regular"
+                    android:text="@string/description"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/TxtDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="@string/description"
+                    android:fontFamily="@font/inter_regular"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

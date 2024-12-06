@@ -51,19 +51,27 @@ namespace Agilize
 
         private void acceptBtn_Click(object sender, EventArgs e)
         {
-             if (user.projectsList == null)
-             {
-                 BindingList<String> firstProject = new BindingList<String>();
-                 firstProject.Add(projects.projectName);
-                 user.projectsList = firstProject;
-             }
-             else
-             {
-                user.projectsList.Add(projects.projectName);
-             }
-            ProjectWindow project = new ProjectWindow(user,pathToProjectFiles,projects.projectName,true);
-            project.Show();
-            this.Close();
+            if (!string.IsNullOrWhiteSpace(projects.projectName))
+            {
+                if (user.projectsList == null)
+                {
+                    BindingList<String> firstProject = new BindingList<String>();
+                    firstProject.Add(projects.projectName);
+                    user.projectsList = firstProject;
+                }
+                else
+                {
+                    user.projectsList.Add(projects.projectName);
+                }
+                ProjectWindow project = new ProjectWindow(user, pathToProjectFiles, projects.projectName, true);
+                project.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Introduce un Nombre valido", "Name Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+             
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
