@@ -31,7 +31,7 @@ namespace Agilize
 
         public Users(string name, string surname, string password, string email, string nickname, BindingList<String> projectsList)
         {
-            projectsList = new BindingList<String>();
+            this.projectsList = new BindingList<String>();
             this.name = name;
             this.surname = surname;
             this.password = password;
@@ -43,6 +43,33 @@ namespace Agilize
         override public String ToString()
         {
             return nickname.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Users otherUser)
+            {
+                return this.nickname == otherUser.nickname;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return nickname?.GetHashCode() ?? 0;
+        }
+
+        public Users Clone()
+        {
+            return new Users
+            {
+                name = this.name,
+                surname = this.surname,
+                password = this.password,
+                email = this.email,
+                nickname = this.nickname,
+                projectsList = this.projectsList
+            };
         }
     }
 }

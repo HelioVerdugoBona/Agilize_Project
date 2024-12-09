@@ -37,9 +37,18 @@ namespace Agilize
 
         private void acceptBtn_Click(object sender, EventArgs e)
         {
-            Task task = new Task(projectWindow, tasksList, user, newTaskName, state, projectsUsers);
-            task.Show();
-            this.Close();
+            if (!string.IsNullOrWhiteSpace(newTaskName))
+            {
+                Task task = new Task(projectWindow, tasksList, user, newTaskName, state, projectsUsers);
+                this.Hide();
+                task.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Introduce un Nombre valido","Name Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

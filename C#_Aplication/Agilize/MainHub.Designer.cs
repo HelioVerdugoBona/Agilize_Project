@@ -50,9 +50,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.projectsBox = new System.Windows.Forms.GroupBox();
+            this.ProjectLBox = new System.Windows.Forms.ListBox();
             this.projectsLBL = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ProjectLBox = new System.Windows.Forms.ListBox();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).BeginInit();
@@ -348,6 +348,21 @@
             this.projectsBox.TabIndex = 1;
             this.projectsBox.TabStop = false;
             // 
+            // ProjectLBox
+            // 
+            this.ProjectLBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
+            this.ProjectLBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ProjectLBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.ProjectLBox.ForeColor = System.Drawing.Color.Black;
+            this.ProjectLBox.FormattingEnabled = true;
+            this.ProjectLBox.ItemHeight = 31;
+            this.ProjectLBox.Location = new System.Drawing.Point(19, 99);
+            this.ProjectLBox.MultiColumn = true;
+            this.ProjectLBox.Name = "ProjectLBox";
+            this.ProjectLBox.Size = new System.Drawing.Size(885, 593);
+            this.ProjectLBox.TabIndex = 21;
+            this.ProjectLBox.SelectedIndexChanged += new System.EventHandler(this.ProjectLBox_SelectedIndexChanged);
+            // 
             // projectsLBL
             // 
             this.projectsLBL.AutoSize = true;
@@ -368,16 +383,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(885, 1);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            // 
-            // ProjectLBox
-            // 
-            this.ProjectLBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
-            this.ProjectLBox.FormattingEnabled = true;
-            this.ProjectLBox.Location = new System.Drawing.Point(19, 99);
-            this.ProjectLBox.Name = "ProjectLBox";
-            this.ProjectLBox.Size = new System.Drawing.Size(885, 615);
-            this.ProjectLBox.TabIndex = 21;
-            this.ProjectLBox.SelectedIndexChanged += new System.EventHandler(this.ProjectLBox_SelectedIndexChanged);
             // 
             // MainHub
             // 

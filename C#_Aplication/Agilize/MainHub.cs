@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Agilize
@@ -15,16 +16,28 @@ namespace Agilize
             this.user = new Users();
             this.user = user;
             this.pathToProjectFiles = pathToProjectFiles;
-            SetAllLbls();
-
+            SetAll();
         }
-
-        public MainHub(Users user)
+        private void SetAll()
         {
-            InitializeComponent();
             SetAllLbls();
-            this.user = new Users();
-            this.user = user;
+            string fontPathInter = @"Fonts\Inter_Regular.ttf";
+            string fontPathOutfit = @"Fonts\Outfit_Regular.ttf";
+
+            Fonts fontLoader = new Fonts();
+            Font InterRegular = fontLoader.LoadCustomFont(fontPathInter, 16);
+            Font outfitRegular = fontLoader.LoadCustomFont(fontPathOutfit, 16);
+
+            ProjectLBox.Font = InterRegular;
+            projectsLBL.Font = outfitRegular;
+
+            if (user.projectsList != null)
+            {
+                foreach (var project in user.projectsList)
+                {
+                    ProjectLBox.Items.Add(project);
+                }
+            }
         }
 
         private void SetAllLbls()
@@ -35,13 +48,6 @@ namespace Agilize
             projectFoldersLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             acountLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             SettingLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            if (user.projectsList != null)
-            {
-                foreach (var project in user.projectsList)
-                {
-                    ProjectLBox.Items.Add(project);
-                }
-            }
         }
 
         private void ProjectLBox_SelectedIndexChanged(object sender, EventArgs e)

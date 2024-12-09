@@ -430,7 +430,7 @@
             // 
             // confirmPswrdLbl
             // 
-            this.confirmPswrdLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(101)))), ((int)(((byte)(158)))));
+            this.confirmPswrdLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(78)))), ((int)(((byte)(137)))));
             this.confirmPswrdLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.confirmPswrdLbl.FlatAppearance.BorderSize = 0;
             this.confirmPswrdLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
