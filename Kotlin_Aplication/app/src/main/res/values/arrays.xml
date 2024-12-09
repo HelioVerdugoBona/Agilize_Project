@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="languajes_array">
-        <item>Castellano</item>
-        <item>Catala</item>
-        <item>English</item>
-    </string-array>
-</resources>
