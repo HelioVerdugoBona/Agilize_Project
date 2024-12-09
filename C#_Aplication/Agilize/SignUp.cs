@@ -31,7 +31,21 @@ namespace Agilize
         private void SetAll()
         {
             LoginLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            RedondearBoton(signUpBtn);
+        }
 
+        private void RedondearBoton(System.Windows.Forms.Button btn)
+        {
+            var radio = 15;
+
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddArc(0, 0, radio, radio, 180, 90);
+            path.AddArc(btn.Width - radio, 0, radio, radio, 270, 90);
+            path.AddArc(btn.Width - radio, btn.Height - radio, radio, radio, 0, 90);
+            path.AddArc(0, btn.Height - radio, radio, radio, 90, 90);
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
         }
 
         private void signUpBtn_Click(object sender, EventArgs e)

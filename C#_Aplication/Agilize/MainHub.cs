@@ -17,7 +17,9 @@ namespace Agilize
             this.user = user;
             this.pathToProjectFiles = pathToProjectFiles;
             SetAll();
+            
         }
+
         private void SetAll()
         {
             SetAllLbls();
@@ -38,16 +40,30 @@ namespace Agilize
                     ProjectLBox.Items.Add(project);
                 }
             }
+            RedondearBoton(logOutBtn);
+        }
+
+        private void RedondearBoton(System.Windows.Forms.Button btn)
+        {
+            var radio = 8;
+
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddArc(0, 0, radio, radio, 180, 90);
+            path.AddArc(btn.Width - radio, 0, radio, radio, 270, 90);
+            path.AddArc(btn.Width - radio, btn.Height - radio, radio, radio, 0, 90);
+            path.AddArc(0, btn.Height - radio, radio, radio, 90, 90);
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
         }
 
         private void SetAllLbls()
         {
             homeLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             newProjectLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            calendarLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             projectFoldersLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             acountLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            SettingLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+        
         }
 
         private void ProjectLBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,20 +113,6 @@ namespace Agilize
             this.Close();
         }
 
-        private void calendarLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Calendar calendar = new Calendar(user, pathToProjectFiles);
-            calendar.Show();
-            this.Close();
-        }
-
-        private void calendarIMG_Click(object sender, EventArgs e)
-        {
-            Calendar calendar = new Calendar(user, pathToProjectFiles);
-            calendar.Show();
-            this.Close();
-        }
-
         private void projectFoldersLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ProjectFolders projectFolders = new ProjectFolders(user, pathToProjectFiles);
@@ -136,20 +138,6 @@ namespace Agilize
         {
             Acount acount = new Acount(user, pathToProjectFiles);
             acount.Show();
-            this.Close();
-        }
-
-        private void SettingLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Settings settings = new Settings(user, pathToProjectFiles);
-            settings.Show();
-            this.Close();
-        }
-
-        private void settingsIMG_Click(object sender, EventArgs e)
-        {
-            Settings settings = new Settings(user, pathToProjectFiles);
-            settings.Show();
             this.Close();
         }
 

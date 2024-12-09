@@ -26,13 +26,34 @@ namespace Agilize
         public ManageMembers(Users user, String pathToProjectFiles,Projects projects)
         {
             InitializeComponent();
-            totalUsers = projects.arrayProjectUsers.Select(item => item.Clone()).ToList();
+            if (projects.arrayProjectUsers != null)
+            {
+                totalUsers = projects.arrayProjectUsers.Select(item => item.Clone()).ToList();
+            }
+            
             this.projects = new Projects();
             this.projects = projects;
             this.user = user;
             this.pathToProjectFiles = pathToProjectFiles;
             setListsBoxs();
+            RedondearBoton(retunBTN);
+            RedondearBoton(createMemberBtn);
+            RedondearBoton(addMemberBtn);
+            RedondearBoton(deleteMemberbtn);
+        }
 
+        private void RedondearBoton(System.Windows.Forms.Button btn)
+        {
+            var radio = 15;
+
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddArc(0, 0, radio, radio, 180, 90);
+            path.AddArc(btn.Width - radio, 0, radio, radio, 270, 90);
+            path.AddArc(btn.Width - radio, btn.Height - radio, radio, radio, 0, 90);
+            path.AddArc(0, btn.Height - radio, radio, radio, 90, 90);
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
         }
 
         private void setListsBoxs()

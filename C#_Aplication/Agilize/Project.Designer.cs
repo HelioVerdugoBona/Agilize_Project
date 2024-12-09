@@ -30,17 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectWindow));
             this.Menu = new System.Windows.Forms.GroupBox();
-            this.SettingLBL = new System.Windows.Forms.LinkLabel();
             this.acountLBL = new System.Windows.Forms.LinkLabel();
             this.projectFoldersLBL = new System.Windows.Forms.LinkLabel();
-            this.calendarLBL = new System.Windows.Forms.LinkLabel();
             this.manageMembersLBL = new System.Windows.Forms.LinkLabel();
             this.homeLBL = new System.Windows.Forms.LinkLabel();
-            this.settingsIMG = new System.Windows.Forms.PictureBox();
             this.separatorLine2 = new System.Windows.Forms.PictureBox();
             this.acountIMG = new System.Windows.Forms.PictureBox();
             this.separatorLine1 = new System.Windows.Forms.PictureBox();
-            this.calendarIMG = new System.Windows.Forms.PictureBox();
             this.manageMembersIMG = new System.Windows.Forms.PictureBox();
             this.projectFoldersIMG = new System.Windows.Forms.PictureBox();
             this.LblAcount = new System.Windows.Forms.Label();
@@ -60,11 +56,9 @@
             this.BackLogLBox = new System.Windows.Forms.ListBox();
             this.DoneLBox = new System.Windows.Forms.ListBox();
             this.Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.acountIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calendarIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageMembersIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectFoldersIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeIMG)).BeginInit();
@@ -75,17 +69,13 @@
             // 
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(159)))));
             this.Menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Menu.Controls.Add(this.SettingLBL);
             this.Menu.Controls.Add(this.acountLBL);
             this.Menu.Controls.Add(this.projectFoldersLBL);
-            this.Menu.Controls.Add(this.calendarLBL);
             this.Menu.Controls.Add(this.manageMembersLBL);
             this.Menu.Controls.Add(this.homeLBL);
-            this.Menu.Controls.Add(this.settingsIMG);
             this.Menu.Controls.Add(this.separatorLine2);
             this.Menu.Controls.Add(this.acountIMG);
             this.Menu.Controls.Add(this.separatorLine1);
-            this.Menu.Controls.Add(this.calendarIMG);
             this.Menu.Controls.Add(this.manageMembersIMG);
             this.Menu.Controls.Add(this.projectFoldersIMG);
             this.Menu.Controls.Add(this.LblAcount);
@@ -98,21 +88,6 @@
             this.Menu.TabIndex = 1;
             this.Menu.TabStop = false;
             this.Menu.Text = " ";
-            // 
-            // SettingLBL
-            // 
-            this.SettingLBL.AutoSize = true;
-            this.SettingLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SettingLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SettingLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.SettingLBL.Location = new System.Drawing.Point(64, 517);
-            this.SettingLBL.Name = "SettingLBL";
-            this.SettingLBL.Size = new System.Drawing.Size(76, 24);
-            this.SettingLBL.TabIndex = 18;
-            this.SettingLBL.TabStop = true;
-            this.SettingLBL.Text = "Settings";
-            this.SettingLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.SettingLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SettingLBL_LinkClicked);
             // 
             // acountLBL
             // 
@@ -144,28 +119,13 @@
             this.projectFoldersLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
             this.projectFoldersLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.projectFoldersLBL_LinkClicked);
             // 
-            // calendarLBL
-            // 
-            this.calendarLBL.AutoSize = true;
-            this.calendarLBL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.calendarLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calendarLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.calendarLBL.Location = new System.Drawing.Point(64, 341);
-            this.calendarLBL.Name = "calendarLBL";
-            this.calendarLBL.Size = new System.Drawing.Size(86, 24);
-            this.calendarLBL.TabIndex = 15;
-            this.calendarLBL.TabStop = true;
-            this.calendarLBL.Text = "Calendar";
-            this.calendarLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.calendarLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.calendarLBL_LinkClicked);
-            // 
             // manageMembersLBL
             // 
             this.manageMembersLBL.AutoSize = true;
             this.manageMembersLBL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.manageMembersLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageMembersLBL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
-            this.manageMembersLBL.Location = new System.Drawing.Point(64, 287);
+            this.manageMembersLBL.Location = new System.Drawing.Point(64, 308);
             this.manageMembersLBL.Name = "manageMembersLBL";
             this.manageMembersLBL.Size = new System.Drawing.Size(164, 24);
             this.manageMembersLBL.TabIndex = 14;
@@ -188,18 +148,6 @@
             this.homeLBL.Text = "Home";
             this.homeLBL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(39)))), ((int)(((byte)(3)))));
             this.homeLBL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.homeLBL_LinkClicked);
-            // 
-            // settingsIMG
-            // 
-            this.settingsIMG.BackgroundImage = global::Agilize.Properties.Resources.settingsIMG;
-            this.settingsIMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.settingsIMG.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingsIMG.Location = new System.Drawing.Point(16, 507);
-            this.settingsIMG.Name = "settingsIMG";
-            this.settingsIMG.Size = new System.Drawing.Size(38, 34);
-            this.settingsIMG.TabIndex = 6;
-            this.settingsIMG.TabStop = false;
-            this.settingsIMG.Click += new System.EventHandler(this.settingsIMG_Click);
             // 
             // separatorLine2
             // 
@@ -235,24 +183,12 @@
             this.separatorLine1.TabIndex = 1;
             this.separatorLine1.TabStop = false;
             // 
-            // calendarIMG
-            // 
-            this.calendarIMG.BackgroundImage = global::Agilize.Properties.Resources.calendarIMG;
-            this.calendarIMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.calendarIMG.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.calendarIMG.Location = new System.Drawing.Point(16, 331);
-            this.calendarIMG.Name = "calendarIMG";
-            this.calendarIMG.Size = new System.Drawing.Size(38, 34);
-            this.calendarIMG.TabIndex = 4;
-            this.calendarIMG.TabStop = false;
-            this.calendarIMG.Click += new System.EventHandler(this.calendarIMG_Click);
-            // 
             // manageMembersIMG
             // 
             this.manageMembersIMG.BackgroundImage = global::Agilize.Properties.Resources.image;
             this.manageMembersIMG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.manageMembersIMG.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.manageMembersIMG.Location = new System.Drawing.Point(16, 277);
+            this.manageMembersIMG.Location = new System.Drawing.Point(16, 298);
             this.manageMembersIMG.Name = "manageMembersIMG";
             this.manageMembersIMG.Size = new System.Drawing.Size(38, 34);
             this.manageMembersIMG.TabIndex = 3;
@@ -475,11 +411,9 @@
             this.Text = "Projects";
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.acountIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorLine1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calendarIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageMembersIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectFoldersIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeIMG)).EndInit();
@@ -492,17 +426,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox Menu;
-        private System.Windows.Forms.LinkLabel SettingLBL;
         private System.Windows.Forms.LinkLabel acountLBL;
         private System.Windows.Forms.LinkLabel projectFoldersLBL;
-        private System.Windows.Forms.LinkLabel calendarLBL;
         private System.Windows.Forms.LinkLabel manageMembersLBL;
         private System.Windows.Forms.LinkLabel homeLBL;
-        private System.Windows.Forms.PictureBox settingsIMG;
         private System.Windows.Forms.PictureBox separatorLine2;
         private System.Windows.Forms.PictureBox acountIMG;
         private System.Windows.Forms.PictureBox separatorLine1;
-        private System.Windows.Forms.PictureBox calendarIMG;
         private System.Windows.Forms.PictureBox manageMembersIMG;
         private System.Windows.Forms.PictureBox projectFoldersIMG;
         private System.Windows.Forms.Label LblAcount;

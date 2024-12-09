@@ -131,13 +131,12 @@
             // 
             // manageMembersLbl
             // 
-            this.manageMembersLbl.AutoSize = true;
             this.manageMembersLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(78)))), ((int)(((byte)(137)))));
             this.manageMembersLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageMembersLbl.ForeColor = System.Drawing.Color.White;
             this.manageMembersLbl.Location = new System.Drawing.Point(12, 9);
             this.manageMembersLbl.Name = "manageMembersLbl";
-            this.manageMembersLbl.Size = new System.Drawing.Size(369, 51);
+            this.manageMembersLbl.Size = new System.Drawing.Size(369, 55);
             this.manageMembersLbl.TabIndex = 13;
             this.manageMembersLbl.Text = "Manage Members";
             // 
@@ -271,7 +270,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
