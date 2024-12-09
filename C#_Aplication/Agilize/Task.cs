@@ -80,16 +80,6 @@ namespace Agilize
                         }
                     }
                 }
-                else
-                {
-                    foreach (var userProject in this.projectMembers)
-                    {
-                        if (userProject != null)
-                        {
-                            MembersListBox.Items.Add(userProject);
-                        }
-                    }
-                }
             }
             if (task.TaskMembers != null)
             {

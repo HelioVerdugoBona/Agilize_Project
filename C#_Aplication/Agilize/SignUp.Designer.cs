@@ -40,6 +40,7 @@
             this.mailTxtBox = new System.Windows.Forms.TextBox();
             this.signUpBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.agilizeLbl = new System.Windows.Forms.Label();
             this.signUpGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,6 +49,7 @@
             // signUpGroup
             // 
             this.signUpGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
+            this.signUpGroup.Controls.Add(this.agilizeLbl);
             this.signUpGroup.Controls.Add(this.surnamesTxtBox);
             this.signUpGroup.Controls.Add(this.nameTxtBox);
             this.signUpGroup.Controls.Add(this.PaswordTxtBox);
@@ -116,7 +118,7 @@
             this.LoginLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LoginLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginLbl.LinkColor = System.Drawing.Color.Black;
-            this.LoginLbl.Location = new System.Drawing.Point(443, 683);
+            this.LoginLbl.Location = new System.Drawing.Point(440, 662);
             this.LoginLbl.Name = "LoginLbl";
             this.LoginLbl.Size = new System.Drawing.Size(101, 37);
             this.LoginLbl.TabIndex = 4;
@@ -129,7 +131,7 @@
             // 
             this.HaveAcount.AutoSize = true;
             this.HaveAcount.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HaveAcount.Location = new System.Drawing.Point(83, 683);
+            this.HaveAcount.Location = new System.Drawing.Point(80, 662);
             this.HaveAcount.Name = "HaveAcount";
             this.HaveAcount.Size = new System.Drawing.Size(379, 37);
             this.HaveAcount.TabIndex = 3;
@@ -167,7 +169,7 @@
             this.signUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUpBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 29F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signUpBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.signUpBtn.Location = new System.Drawing.Point(243, 567);
+            this.signUpBtn.Location = new System.Drawing.Point(231, 547);
             this.signUpBtn.Name = "signUpBtn";
             this.signUpBtn.Size = new System.Drawing.Size(192, 58);
             this.signUpBtn.TabIndex = 0;
@@ -184,6 +186,16 @@
             this.pictureBox1.Size = new System.Drawing.Size(626, 765);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // agilizeLbl
+            // 
+            this.agilizeLbl.AutoSize = true;
+            this.agilizeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agilizeLbl.Location = new System.Drawing.Point(306, 732);
+            this.agilizeLbl.Name = "agilizeLbl";
+            this.agilizeLbl.Size = new System.Drawing.Size(55, 20);
+            this.agilizeLbl.TabIndex = 9;
+            this.agilizeLbl.Text = "Agilize";
             // 
             // SignUp
             // 
@@ -216,5 +228,6 @@
         private System.Windows.Forms.TextBox PaswordTxtBox;
         private System.Windows.Forms.TextBox surnamesTxtBox;
         private System.Windows.Forms.TextBox nameTxtBox;
+        private System.Windows.Forms.Label agilizeLbl;
     }
 }

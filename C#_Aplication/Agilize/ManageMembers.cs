@@ -18,14 +18,15 @@ namespace Agilize
     public partial class ManageMembers : Form
     {
         Users newUser = new Users();
-        BindingList<Users> listNewUsers = new BindingList<Users>();
         Users user;
         Projects projects;
         String pathToProjectFiles;
+        List<Users> totalUsers;
 
         public ManageMembers(Users user, String pathToProjectFiles,Projects projects)
         {
             InitializeComponent();
+            totalUsers = projects.arrayProjectUsers.Select(item => item.Clone()).ToList();
             this.projects = new Projects();
             this.projects = projects;
             this.user = user;
@@ -53,12 +54,11 @@ namespace Agilize
                 {
                     foreach (Users user in usersList)
                     {
-                        if (user.nickname.Equals(this.user.nickname) && projects.arrayProjectUsers.Contains(user))
+                        if (!user.nickname.Equals(this.user.nickname) && !projects.arrayProjectUsers.Contains(user))
                         {
                             membersofAgilize.Items.Add(user);
                         }
                     }
-
                     foreach (var projectMember in projects.arrayProjectUsers)
                     {
                         projectMembers.Items.Add(projectMember);
@@ -121,7 +121,6 @@ namespace Agilize
             {
                 projectMembers.Items.Add(addedUsers);
                 projects.arrayProjectUsers.Add(addedUsers);
-
                 membersofAgilize.Items.Remove(addedUsers);
             }
             else
@@ -213,7 +212,70 @@ namespace Agilize
 
         private void retunBTN_Click(object sender, EventArgs e)
         {
+            saveNewUsers();
             this.Close();
+        }
+
+        private void saveNewUsers()
+        {
+            if (!File.Exists(pathToProjectFiles + "\\Users.json"))
+            {
+                File.Create(pathToProjectFiles + "\\Users.json").Close(); // Crea y cierra el archivo
+            }
+            else
+            {
+                List<Users> usersList = new List<Users>();
+                string jsonContent = File.ReadAllText(pathToProjectFiles + "\\Users.json");
+                if (!string.IsNullOrWhiteSpace(jsonContent))
+                {
+                    usersList = System.Text.Json.JsonSerializer.Deserialize<List<Users>>(jsonContent);
+                }
+                BindingList<Users> deletedUsers = obtainDeletedUsers();
+
+                if (deletedUsers.Count > 0 && deletedUsers != null)
+                {
+                    foreach (Users user in deletedUsers) 
+                    {
+                        if (usersList.Contains(user))
+                        {
+                            usersList.Remove(user);
+                            user.projectsList.Remove(projects.projectName);
+                            usersList.Add(user);
+                        }
+                    }
+                }
+                foreach (Users user in projects.arrayProjectUsers)
+                {
+                    if (!usersList.Contains(user) || !user.projectsList.Contains(projects.projectName))
+                    {
+                        if (user.projectsList == null)
+                        {
+                            user.projectsList = new BindingList<string>() { projects.projectName };
+                        }
+                        else
+                        {
+                            usersList.Remove(user);
+                            user.projectsList.Add(projects.projectName);
+                            usersList.Add(user);
+                        }
+                    }
+                }
+                string newJsonContent = System.Text.Json.JsonSerializer.Serialize(usersList, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(pathToProjectFiles + "\\Users.json", newJsonContent);
+            }
+        }
+
+        private BindingList<Users> obtainDeletedUsers()
+        {
+            BindingList <Users> deledUsers = new BindingList<Users>();
+            foreach (var user in totalUsers)
+            {
+                if (!projects.arrayProjectUsers.Contains(user))
+                {
+                    deledUsers.Add(user);
+                }
+            }
+            return deledUsers;
         }
 
         private bool ValidateNewUser()
