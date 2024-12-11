@@ -5,10 +5,14 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -73,6 +77,19 @@ class ProjectWindow: AppCompatActivity()
             }
             saveAllData()
         }
+
+        val sumaryBtn = findViewById<Button>(R.id.ObtainsSumaryBtn)
+        sumaryBtn.setOnClickListener {
+            val arrayTasks = mutableListOf<Tasks>()
+            project.arrayTasks.forEach{ task ->
+                if(task.CurrentState == 4){
+                    arrayTasks.add(task)
+                }
+            }
+            val intent = Intent(this, SumaryActivity::class.java)
+            intent.putExtra(SumaryActivity.TasksStats.STATS,arrayTasks)
+            startActivity(intent)
+        }
     }
 
     private fun saveAllData() {
@@ -101,7 +118,7 @@ class ProjectWindow: AppCompatActivity()
 
     private fun obtainStats() {
         val intent = intent
-        project = intent.getSerializableExtra(ProjectStats.STATS) as Projects
+        project = intent.getParcelableExtra(ProjectStats.STATS)!!
     }
 
     private fun setAll() {
@@ -132,6 +149,7 @@ class ProjectWindow: AppCompatActivity()
 
         val rvDoneAdapter = setRVAdapter(arrayDone,4)
         rvDone = setAllRV(rvDoneAdapter,rvDone)
+
     }
 
     private fun setAllRV(rvAdapter: RecyclerViewTasksAdapter, rv: RecyclerView): RecyclerView {
@@ -157,7 +175,7 @@ class ProjectWindow: AppCompatActivity()
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == RESULT_OK) {
-            val task = data?.getSerializableExtra("task_result") as? Tasks
+            val task = data?.getParcelableExtra("task_result") as? Tasks
             if (task != null) {
                 when(task.CurrentState){
                     0 ->arrayBackLog = taskUpdater(arrayBackLog,task)

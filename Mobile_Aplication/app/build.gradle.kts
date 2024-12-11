@@ -44,6 +44,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation("com.google.code.gson:gson:2.8.7")
     implementation("org.bouncycastle:bcprov-jdk15to18:1.76")
+    implementation("androidx.fragment:fragment:1.5.5")
     implementation(libs.firebase.crashlytics.buildtools)
     implementation(libs.androidx.room.ktx)
     testImplementation(libs.junit)

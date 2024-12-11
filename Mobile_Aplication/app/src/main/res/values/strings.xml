@@ -54,4 +54,7 @@
     <string name="password_correlation_null">Please enter a valid value</string>
     <string name="password_correlation_error">The two passwords do not match</string>
     <string name="apply">Apply</string>
+    <string name="final_time">Final Time</string>
+    <string name="date_endend">Date Endend</string>
+    <string name="obtener_resumen">Obtener Resumen</string>
 </resources>

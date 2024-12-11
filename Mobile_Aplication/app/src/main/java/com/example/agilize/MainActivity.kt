@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun validateUser(): Boolean {
-        var userName = userNck.text.toString()
+        val userName = userNck.text.toString()
         var userPassword = userPsw.text.toString()
         userPassword = encryptPassword(userPassword)
         arrayUsers.forEach { user ->

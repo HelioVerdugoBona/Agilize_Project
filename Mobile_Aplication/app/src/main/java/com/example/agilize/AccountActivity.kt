@@ -89,7 +89,7 @@ class AccountActivity: AppCompatActivity() {
 
     private fun obtainUserStats() {
         val intent = intent
-        user = intent.getSerializableExtra(UserStats.STATS) as Users
+        user = intent.getParcelableExtra(UserStats.STATS)!!
     }
 
     private fun saveDataUser() {

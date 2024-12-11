@@ -79,7 +79,7 @@ class ProjectsActivity: AppCompatActivity()
 
     private fun obtainUser() {
         val intent = intent
-        user = intent.getSerializableExtra(UserProjects.PROJECTS) as Users
+        user = intent.getParcelableExtra(UserProjects.PROJECTS)!!
     }
 
     private fun setUserProjects() {

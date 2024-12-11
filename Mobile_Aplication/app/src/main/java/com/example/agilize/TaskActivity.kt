@@ -59,11 +59,12 @@ class TaskActivity:AppCompatActivity() {
 
             saveAllData()
         }
+
     }
 
     private fun obtainStats() {
         val intent = intent
-        task = intent.getSerializableExtra(TasksStats.STATS) as Tasks
+        task = intent.getParcelableExtra(TasksStats.STATS)!!
         setAll()
     }
 
