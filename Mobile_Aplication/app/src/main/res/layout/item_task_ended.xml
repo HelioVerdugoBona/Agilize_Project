@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_edittext_projects"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:padding="5dp"
+    android:layout_margin="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="10dp"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/task_img"
+            />
+
+        <TextView
+            android:id="@+id/taskName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/task_name"
+            android:fontFamily="@font/inter_variable_font"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_textview_sprint"
+        android:padding="2dp"
+        >
+
+        <TextView
+            android:id="@+id/sprint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sprintnum"
+            android:fontFamily="@font/inter_variable_font"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

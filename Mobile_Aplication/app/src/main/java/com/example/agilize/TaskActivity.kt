@@ -80,7 +80,11 @@ class TaskActivity:AppCompatActivity() {
         creationDate.hint = task.DateCreation
         deadLine.hint = task.DeadLine
         sprint.hint = task.Sprint.toString()
-        estimatedTime.hint = task.EstimatedTime + "h"
+        if(!task.EstimatedTime.contains("h") || !task.EstimatedTime.contains("H") ){
+            estimatedTime.hint = task.EstimatedTime + "h"
+        }else{
+            estimatedTime.hint = task.EstimatedTime
+        }
         description.text = task.Description
         taskName.text = task.TaskName
         setCurrentState(currentState)
@@ -108,11 +112,12 @@ class TaskActivity:AppCompatActivity() {
     private fun saveAllData() {
         if(sprint.text.toString().toIntOrNull() != null){
             task.Sprint = sprint.text.toString().toInt()
-        }else{
-            Toast.makeText(this@TaskActivity, getString(R.string.sprint_saving_error), Toast.LENGTH_LONG).show()
         }
-        if(estimatedTime.text.isNotEmpty()){
+        else if(estimatedTime.text.isNotEmpty() && estimatedTime.text.toString().matches("^[hH0-9]+\$".toRegex())){
             task.EstimatedTime = estimatedTime.text.toString()
+        }
+        else{
+            Toast.makeText(this@TaskActivity, getString(R.string.task_saving_error), Toast.LENGTH_LONG).show()
         }
     }
 }

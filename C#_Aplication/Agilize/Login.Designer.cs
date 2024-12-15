@@ -30,15 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.LoginBox = new System.Windows.Forms.GroupBox();
+            this.agilizeLbl = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.LblPaswordForgot = new System.Windows.Forms.LinkLabel();
             this.singUpLbl = new System.Windows.Forms.LinkLabel();
             this.DonAcount = new System.Windows.Forms.Label();
             this.paswordTxTBox = new System.Windows.Forms.TextBox();
             this.usernameTxTBox = new System.Windows.Forms.TextBox();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.agilizeLbl = new System.Windows.Forms.Label();
             this.LoginBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,7 +48,6 @@
             this.LoginBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(208)))));
             this.LoginBox.Controls.Add(this.agilizeLbl);
             this.LoginBox.Controls.Add(this.pictureBox2);
-            this.LoginBox.Controls.Add(this.LblPaswordForgot);
             this.LoginBox.Controls.Add(this.singUpLbl);
             this.LoginBox.Controls.Add(this.DonAcount);
             this.LoginBox.Controls.Add(this.paswordTxTBox);
@@ -61,6 +59,16 @@
             this.LoginBox.TabIndex = 1;
             this.LoginBox.TabStop = false;
             // 
+            // agilizeLbl
+            // 
+            this.agilizeLbl.AutoSize = true;
+            this.agilizeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agilizeLbl.Location = new System.Drawing.Point(306, 732);
+            this.agilizeLbl.Name = "agilizeLbl";
+            this.agilizeLbl.Size = new System.Drawing.Size(55, 20);
+            this.agilizeLbl.TabIndex = 8;
+            this.agilizeLbl.Text = "Agilize";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -69,20 +77,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(100, 103);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
-            // 
-            // LblPaswordForgot
-            // 
-            this.LblPaswordForgot.AutoSize = true;
-            this.LblPaswordForgot.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblPaswordForgot.LinkColor = System.Drawing.Color.Black;
-            this.LblPaswordForgot.Location = new System.Drawing.Point(545, 433);
-            this.LblPaswordForgot.Name = "LblPaswordForgot";
-            this.LblPaswordForgot.Size = new System.Drawing.Size(87, 13);
-            this.LblPaswordForgot.TabIndex = 6;
-            this.LblPaswordForgot.TabStop = true;
-            this.LblPaswordForgot.Text = "Forgot Pasword?";
-            this.LblPaswordForgot.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.LblPaswordForgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblPaswordForgot_LinkClicked);
             // 
             // singUpLbl
             // 
@@ -161,16 +155,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // agilizeLbl
-            // 
-            this.agilizeLbl.AutoSize = true;
-            this.agilizeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agilizeLbl.Location = new System.Drawing.Point(306, 732);
-            this.agilizeLbl.Name = "agilizeLbl";
-            this.agilizeLbl.Size = new System.Drawing.Size(55, 20);
-            this.agilizeLbl.TabIndex = 8;
-            this.agilizeLbl.Text = "Agilize";
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,7 +183,6 @@
         private System.Windows.Forms.TextBox paswordTxTBox;
         private System.Windows.Forms.TextBox usernameTxTBox;
         private System.Windows.Forms.Button LoginBtn;
-        private System.Windows.Forms.LinkLabel LblPaswordForgot;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label agilizeLbl;
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,10 @@ namespace Agilize
         Projects projects;
         Users user;
         String pathToProjectFiles;
+
+        /// <summary>
+        /// Contructor del form, recibe el path donde estan los archivos del programa y el usuario que ha iniciado sessión.
+        /// </summary>
         public NewProject(Users user, String pathToProjectFiles)
         {
             InitializeComponent();
@@ -27,6 +32,9 @@ namespace Agilize
             RedondearBoton(cancelBtn);
         }
 
+        /// <summary>
+        /// Redondea los botones
+        /// </summary>
         private void RedondearBoton(System.Windows.Forms.Button btn)
         {
             var radio = 15;
@@ -41,6 +49,10 @@ namespace Agilize
             btn.Region = new Region(path);
         }
 
+        /// <summary>
+        /// Comprueba que el text box tenga como nombre Project Name, si es así lo borra para que el usuario pueda escribir.
+        /// Comprueba que el texto no sea Project Name para que pueda funcionar como Hint.
+        /// </summary>
         private void projectNameTxTBox_Enter(object sender, EventArgs e)
         {
             if (projectNameTxTBox.Text == "Project Name")
@@ -50,6 +62,11 @@ namespace Agilize
             }
         }
 
+
+        /// <summary>
+        /// Guarda el nombre del nuevo proyecto, sino deja el texto de Project Name para indicar que se ha de poner el nombre del nuevo proyecto
+        /// funciona como un hint.
+        /// </summary>
         private void projectNameTxTBox_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(projectNameTxTBox.Text))
@@ -65,31 +82,77 @@ namespace Agilize
             
         }
 
+        /// <summary>
+        /// Comprueba que el nombre del Proyecto sea valido, lo crea, lo añade a la lista de proyectos de usuario y lo habre
+        /// </summary>
         private void acceptBtn_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(projects.projectName))
             {
-                if (user.projectsList == null)
+                if (comproveProyect())
                 {
-                    BindingList<String> firstProject = new BindingList<String>();
-                    firstProject.Add(projects.projectName);
-                    user.projectsList = firstProject;
+                    if (user.projectsList == null)
+                    {
+                        BindingList<String> firstProject = new BindingList<String>();
+                        firstProject.Add(projects.projectName);
+                        user.projectsList = firstProject;
+                    }
+                    else
+                    {
+                        user.projectsList.Add(projects.projectName);
+                    }
+                    ProjectWindow project = new ProjectWindow(user, pathToProjectFiles, projects.projectName, true);
+                    project.Show();
+                    this.Close();
                 }
                 else
                 {
-                    user.projectsList.Add(projects.projectName);
+                    MessageBox.Show("Este proyecto ya existe, por favor usa otro nombre", "Name Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                ProjectWindow project = new ProjectWindow(user, pathToProjectFiles, projects.projectName, true);
-                project.Show();
-                this.Close();
             }
             else
             {
                 MessageBox.Show("Introduce un Nombre valido", "Name Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-             
+
         }
 
+        /// <summary>
+        /// Comprueba que el nombre del proyecto no exista ya.
+        /// </summary>
+        private bool comproveProyect()
+        {
+            if (user.projectsList != null && user.projectsList.Contains(projects.projectName))
+            {
+                return false;
+            }
+            else
+            {
+                if (!File.Exists(pathToProjectFiles + "\\Projects.json"))
+                {
+                    File.Create(pathToProjectFiles).Close(); // Crea y cierra el archivo
+                }
+                // Leer usuarios existentes del archivo JSON
+                List<Projects> proyectList = new List<Projects>();
+                string jsonContent = File.ReadAllText(pathToProjectFiles + "\\Projects.json");
+                if (!string.IsNullOrWhiteSpace(jsonContent))
+                {
+                    proyectList = System.Text.Json.JsonSerializer.Deserialize<List<Projects>>(jsonContent);
+                }
+                foreach (Projects project in proyectList)
+                {
+                    if (project.projectName.Equals(projects.projectName))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Cierra el Form
+        /// </summary>
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();

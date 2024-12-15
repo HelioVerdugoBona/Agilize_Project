@@ -10,6 +10,10 @@ namespace Agilize
         Users user;
         String pathToProjectFiles;
 
+
+        /// <summary>
+        /// Contructor del form, recibe el path donde estan los archivos del programa y el usuario que ha iniciado sessión.
+        /// </summary>
         public MainHub(Users user, String pathToProjectFiles)
         {
             InitializeComponent();
@@ -20,19 +24,12 @@ namespace Agilize
             
         }
 
+        /// <summary>
+        /// Settea todo el apartado visual del form
+        /// </summary>
         private void SetAll()
         {
             SetAllLbls();
-            string fontPathInter = @"Fonts\Inter_Regular.ttf";
-            string fontPathOutfit = @"Fonts\Outfit_Regular.ttf";
-
-            Fonts fontLoader = new Fonts();
-            Font InterRegular = fontLoader.LoadCustomFont(fontPathInter, 16);
-            Font outfitRegular = fontLoader.LoadCustomFont(fontPathOutfit, 16);
-
-            ProjectLBox.Font = InterRegular;
-            projectsLBL.Font = outfitRegular;
-
             if (user.projectsList != null)
             {
                 foreach (var project in user.projectsList)
@@ -43,6 +40,9 @@ namespace Agilize
             RedondearBoton(logOutBtn);
         }
 
+        /// <summary>
+        /// Redondea los botones
+        /// </summary>
         private void RedondearBoton(System.Windows.Forms.Button btn)
         {
             var radio = 8;
@@ -57,6 +57,9 @@ namespace Agilize
             btn.Region = new Region(path);
         }
 
+        /// <summary>
+        /// Settea todos los labels del form
+        /// </summary>
         private void SetAllLbls()
         {
             homeLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
@@ -66,6 +69,9 @@ namespace Agilize
         
         }
 
+        /// <summary>
+        /// Comprueba que se ha seleccionado un nuevo proyecto y lo abre
+        /// </summary>
         private void ProjectLBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             String projectName = (String)ProjectLBox.SelectedItem;
@@ -84,7 +90,9 @@ namespace Agilize
             }
         }
 
-
+        /// <summary>
+        /// Abre la pestaña de Home (que es esta misma)
+        /// </summary>
         private void homeLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MainHub mainHub = new MainHub(user, pathToProjectFiles);
@@ -92,6 +100,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de Home (que es esta misma)
+        /// </summary>
         private void homeIMG_Click(object sender, EventArgs e)
         {
             MainHub mainHub = new MainHub(user, pathToProjectFiles);
@@ -99,6 +110,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de New Project
+        /// </summary>
         private void newProjectLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             NewProject newProject = new NewProject(user, pathToProjectFiles);
@@ -106,6 +120,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de New Project
+        /// </summary>
         private void newProjectIMG_Click(object sender, EventArgs e)
         {
             NewProject newProject = new NewProject(user, pathToProjectFiles);
@@ -113,6 +130,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de Project Folders
+        /// </summary>
         private void projectFoldersLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ProjectFolders projectFolders = new ProjectFolders(user, pathToProjectFiles);
@@ -120,6 +140,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de Project Folders
+        /// </summary>
         private void projectFoldersIMG_Click(object sender, EventArgs e)
         {
             ProjectFolders projectFolders = new ProjectFolders(user, pathToProjectFiles);
@@ -127,6 +150,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de Acount
+        /// </summary>
         private void acountLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Acount acount = new Acount(user, pathToProjectFiles);
@@ -134,6 +160,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de Acount
+        /// </summary>
         private void acountIMG_Click(object sender, EventArgs e)
         {
             Acount acount = new Acount(user, pathToProjectFiles);
@@ -141,7 +170,10 @@ namespace Agilize
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Cierra el Form
+        /// </summary>
+        private void logOutBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }

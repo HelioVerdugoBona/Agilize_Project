@@ -25,6 +25,16 @@
     <string name="sprint">Sprint</string>
     <string name="estimatedtime">EstimatedTime</string>
     <string name="error">Task Stat</string>
+    <string name="apply">Apply</string>
+    <string name="final_time">Final Time</string>
+    <string name="date_endend">Date Endend</string>
+    <string name="obtener_resumen">Obtain Sumary</string>
+    <string name="ended_tasks">Ended Tasks</string>
+    <string name="final_sumary">Sumary</string>
+    <string name="task_final_stats">Task Final Stats</string>
+    <string name="task_final_members">Task Final Members</string>
+    <string name="task_final_description">Task Final Description</string>
+    <string name="search">Search</string>
     <string name="user_nickname">User Nickname</string>
     <string name="user_nickname_account">User Nickname</string>
     <string name="user_name">User Name</string>
@@ -49,12 +59,8 @@
     <string name="obtaining_projects_error">There was an error loading one or more projects</string>
     <string name="saving_projects_error">There was an error saving the project</string>
     <string name="updating_task_error">Error updating the task</string>
-    <string name="sprint_saving_error">Error saving the Sprint status</string>
+    <string name="task_saving_error">Error saving the task</string>
     <string name="confirm_status_password">Comprove Password</string>
     <string name="password_correlation_null">Please enter a valid value</string>
     <string name="password_correlation_error">The two passwords do not match</string>
-    <string name="apply">Apply</string>
-    <string name="final_time">Final Time</string>
-    <string name="date_endend">Date Endend</string>
-    <string name="obtener_resumen">Obtener Resumen</string>
 </resources>

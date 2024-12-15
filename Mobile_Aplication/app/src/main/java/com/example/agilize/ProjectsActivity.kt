@@ -4,6 +4,8 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +27,7 @@ class ProjectsActivity: AppCompatActivity()
 
     private var arrayTotalProjects = mutableListOf<Projects>()
     private var arrayUserProjects = mutableListOf<Projects>()
+    private var showedProjects = mutableListOf<Projects>()
     private lateinit var user: Users
     private lateinit var rvProjects: RecyclerView
 
@@ -41,7 +44,7 @@ class ProjectsActivity: AppCompatActivity()
         setUserProjects()
         // Configura el adaptador y el layout manager
         rvProjects.layoutManager = LinearLayoutManager(this)
-        rvProjects.adapter = RecyclerViewProjectosAdapter(arrayUserProjects){ projects ->
+        rvProjects.adapter = RecyclerViewProjectosAdapter(showedProjects){ projects ->
             val intent = Intent(this,ProjectWindow::class.java)
             intent.putExtra(ProjectWindow.ProjectStats.STATS,projects)
             startActivityForResult(intent,1)
@@ -57,6 +60,23 @@ class ProjectsActivity: AppCompatActivity()
             val intent = Intent(this, AccountActivity::class.java)
             intent.putExtra(AccountActivity.UserStats.STATS,user)
             startActivityForResult(intent,2)
+        }
+
+        val btnSearch = findViewById<Button>(R.id.BtnBuscar)
+        val projectSearched = findViewById<EditText>(R.id.ProjectSearch)
+        btnSearch.setOnClickListener{
+            showedProjects.clear()
+            if(projectSearched.text.toString().isEmpty()){
+                showedProjects.addAll(arrayUserProjects)
+            }else{
+                arrayUserProjects.forEach{ projectName ->
+                    val muck = projectSearched.text.toString()
+                    if(projectName.projectName.contains(muck)){
+                        showedProjects.add(projectName)
+                    }
+                }
+            }
+            rvProjects.adapter?.notifyDataSetChanged()
         }
     }
 
@@ -74,6 +94,7 @@ class ProjectsActivity: AppCompatActivity()
         arrayTotalProjects.clear()
         obtainFileProjects()
         arrayUserProjects.clear()
+        showedProjects.clear()
         setUserProjects()
     }
 
@@ -88,6 +109,7 @@ class ProjectsActivity: AppCompatActivity()
                 arrayUserProjects.add(project)
             }
         }
+        showedProjects.addAll(arrayUserProjects)
     }
 
     private fun obtainFileProjects() {
