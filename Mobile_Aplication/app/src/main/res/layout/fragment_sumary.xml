@@ -4,116 +4,135 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <LinearLayout
+        android:id="@+id/FgTaskEnded"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center|start"
-        android:layout_margin="15dp">
+        android:visibility="gone">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Task Final Stats"
+            android:text="@string/final_sumary"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:layout_marginBottom="1dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/outfit_regular"
             android:background="@color/Label"/>
-        <TextView
-            android:id="@+id/TxtFinalDateCreation"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:textAlignment="center"
-            android:text="@string/date_creation"
-            android:textSize="25sp"
-            android:fontFamily="@font/outfit_regular"
-            android:background="@drawable/rounded_edittext"/>
-        <TextView
-            android:id="@+id/TxtFinalDateEnd"
+            android:orientation="vertical"
+            android:layout_gravity="center|start"
+            android:layout_margin="15dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/task_final_stats"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:layout_marginBottom="1dp"
+                android:background="@color/Label"/>
+            <TextView
+                android:id="@+id/TxtFinalDateCreation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textAlignment="center"
+                android:hint="@string/date_creation"
+                android:textSize="25sp"
+                android:fontFamily="@font/outfit_regular"
+                android:background="@drawable/rounded_edittext"/>
+            <TextView
+                android:id="@+id/TxtFinalDateEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="2dp"
+                android:textAlignment="center"
+                android:hint="@string/date_endend"
+                android:textSize="25sp"
+                android:fontFamily="@font/outfit_regular"
+                android:background="@drawable/rounded_edittext"/>
+            <TextView
+                android:id="@+id/TxtFinalCurrentState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="2dp"
+                android:textAlignment="center"
+                android:hint="@string/currentstate"
+                android:textSize="25sp"
+                android:fontFamily="@font/outfit_regular"
+                android:background="@drawable/rounded_edittext"/>
+            <TextView
+                android:id="@+id/TxtFinalSprint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="2dp"
+                android:textAlignment="center"
+                android:hint="@string/sprint"
+                android:textSize="25sp"
+                android:fontFamily="@font/outfit_regular"
+                android:background="@drawable/rounded_edittext"/>
+            <TextView
+                android:id="@+id/TxtFinalTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textAlignment="center"
+                android:hint="@string/final_time"
+                android:textSize="25sp"
+                android:fontFamily="@font/outfit_regular"
+                android:background="@drawable/rounded_edittext"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="2dp"
-            android:textAlignment="center"
-            android:text="@string/date_endend"
-            android:textSize="25sp"
-            android:fontFamily="@font/outfit_regular"
-            android:background="@drawable/rounded_edittext"/>
-        <TextView
-            android:id="@+id/TxtFinalCurrentState"
+            android:orientation="vertical"
+            android:layout_gravity="center|start"
+            android:layout_margin="15dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/task_final_members"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:layout_marginBottom="1dp"
+                android:background="@color/Label"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RVFinalMembers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Focus"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="2dp"
-            android:textAlignment="center"
-            android:text="@string/currentstate"
-            android:textSize="25sp"
-            android:fontFamily="@font/outfit_regular"
-            android:background="@drawable/rounded_edittext"/>
-        <TextView
-            android:id="@+id/TxtFinalSprint"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="2dp"
-            android:textAlignment="center"
-            android:text="@string/sprint"
-            android:textSize="25sp"
-            android:fontFamily="@font/outfit_regular"
-            android:background="@drawable/rounded_edittext"/>
-        <TextView
-            android:id="@+id/TxtFinalTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:textAlignment="center"
-            android:text="@string/final_time"
-            android:textSize="25sp"
-            android:fontFamily="@font/outfit_regular"
-            android:background="@drawable/rounded_edittext"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center|start"
-        android:layout_margin="15dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Task Final Members"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:layout_marginBottom="1dp"
-            android:background="@color/Label"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RVFinalMembers"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/Focus"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center|start"
-        android:layout_margin="15dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Task Final Description"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:layout_marginBottom="1dp"
-            android:background="@color/Label"/>
-        <TextView
-            android:id="@+id/TxtFinalDesciprion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:textAlignment="center"
-            android:text="@string/description"
-            android:textSize="18sp"
-            android:fontFamily="@font/inter_regular"
-            android:background="@drawable/rounded_edittext"/>
+            android:orientation="vertical"
+            android:layout_gravity="center|start"
+            android:layout_margin="15dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/task_final_description"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:layout_marginBottom="1dp"
+                android:background="@color/Label"/>
+            <TextView
+                android:id="@+id/TxtFinalDesciprion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:textAlignment="center"
+                android:hint="@string/description"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter_regular"
+                android:background="@drawable/rounded_edittext"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

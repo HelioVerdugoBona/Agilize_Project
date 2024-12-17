@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Agilize
@@ -18,7 +14,8 @@ namespace Agilize
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            //La primera vez que se ejecuta la aplicación, busca la ruta de Documents y crea una carpeta para la aplicación.
+            //De base, si no se cambia nada la aplicación guardara toda la información ahí.
             string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string appFolder = Path.Combine(documentsPath, "Agilize");
             Directory.CreateDirectory(appFolder);  

@@ -20,6 +20,11 @@ namespace Agilize
         Tasks task;
         Tasks oldTask;
         Boolean isnewTask;
+
+        /// <summary>
+        /// Contructor del form, recibe el projecto que lo ha habierto, la lista de tareas, la tarea seleccionada,
+        /// el usuario que ha iniciado sessión y los miembros del proyecto
+        /// </summary>
         public Task(ProjectWindow projectWindow, BindingList<Tasks> tasksList,Tasks task, Users user, BindingList<Users> projectMembers)
         {
             InitializeComponent();
@@ -35,6 +40,10 @@ namespace Agilize
             SetAll(false);
         }
 
+        /// <summary>
+        /// Contructor del form, recibe el projecto que lo ha habierto, la lista de tareas, la tarea seleccionada,
+        /// el usuario que ha iniciado sessión, el estado donde ha sido creado (Backlog, To Do, etc) y los miembros del proyecto.
+        /// </summary>
         public Task(ProjectWindow projectWindow, BindingList<Tasks> tasksList, Users user,String taskName,TaskState state, BindingList<Users> projectMembers)
         {
             InitializeComponent();
@@ -50,7 +59,11 @@ namespace Agilize
             SetAll(true);
         }
 
-       private void SetAll(Boolean firstTime)
+        /// <summary>
+        /// Settea todo el apartado visual del form tanto para el caso de 
+        /// ser una nueva task como para el caso de ser una ya existente
+        /// </summary>
+        private void SetAll(Boolean firstTime)
         {
             RedondearBoton(retunBTN);
             RedondearBoton(addMemberBTN);
@@ -66,6 +79,9 @@ namespace Agilize
             SetAllLBox();
         }
 
+        /// <summary>
+        /// Settea todo el apartado visual del form
+        /// </summary>
         private void SetAllLBox()
         {
             if (projectMembers != null)
@@ -94,6 +110,9 @@ namespace Agilize
            
         }
 
+        /// <summary>
+        /// Settea todos los labels del form en el caso de ser la primera vez que se crea
+        /// </summary>
         private void SetAllLblsFirstTime()
         {
             TaskLBL.Text = task.TaskName;
@@ -109,6 +128,9 @@ namespace Agilize
             MembersListBox.Items.Clear();
         }
 
+        /// <summary>
+        ///  Settea todos los labels del form para el resto de casos
+        /// </summary>
         private void SetAllLbls()
         {
             TaskLBL.Text = task.TaskName;
@@ -127,6 +149,10 @@ namespace Agilize
             ListedMembersListBox.Items.Clear();
             MembersListBox.Items.Clear();
         }
+
+        /// <summary>
+        /// Redondea los botones
+        /// </summary>
         private void RedondearBoton(System.Windows.Forms.Button btn)
         {
             var radio = 15;
@@ -141,6 +167,9 @@ namespace Agilize
             btn.Region = new Region(path);
         }
 
+        /// <summary>
+        /// Compueba que la task sea valida para crearse
+        /// </summary>
         private void ValidateTask()
         {
             if (task.Description == null)
@@ -165,36 +194,57 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Obtiene la descripción de la tarea
+        /// </summary>
         private void descriptionTxtBox_TextChanged(object sender, EventArgs e)
         {
             task.Description = descriptionTxtBox.Text;
         }
 
+        /// <summary>
+        /// Obtiene la fecha de creación
+        /// </summary>
         private void dateCreationTPicker_ValueChanged(object sender, EventArgs e)
         {
             task.DateCreation = deadLineTPicker.Value.ToString();
         }
 
+        /// <summary>
+        /// Obtiene la fecha limite de la tarea
+        /// </summary>
         private void deadLineTPicker_ValueChanged(object sender, EventArgs e)
         {
             task.DeadLine = deadLineTPicker.Value.ToString();
         }
 
+        /// <summary>
+        /// Obtiene el estado actual de la tarea
+        /// </summary>
         private void currentSateCBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             task.CurrentState = (TaskState)currentSateCBox.SelectedItem;
         }
 
+        /// <summary>
+        /// Obtiene el sprint
+        /// </summary>
         private void sprintNumUpDown_ValueChanged(object sender, EventArgs e)
         {
             task.Sprint = (int) sprintNumUpDown.Value;
         }
 
+        /// <summary>
+        /// Obtiene el tiempo estimado para hacer la tarea
+        /// </summary>
         private void estimatedTimeTxtBox_TextChanged(object sender, EventArgs e)
         {
             task.EstimatedTime = estimatedTimeTxtBox.Text;
         }
 
+        /// <summary>
+        /// Elimina al miembro seleccionado de la tarea
+        /// </summary>
         private void deleteMemberBtn_Click(object sender, EventArgs e)
         {
             if (ListedMembersListBox.SelectedItem == null)
@@ -213,6 +263,9 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Añade el miembro seleccionado a la taera
+        /// </summary>
         private void addMemberBTN_Click(object sender, EventArgs e)
         {
             if (MembersListBox.SelectedItem == null)
@@ -239,6 +292,9 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Vuelve al Kanban del proyecto
+        /// </summary>
         private void retunBTN_Click(object sender, EventArgs e)
         {
             ValidateTask();
@@ -255,8 +311,12 @@ namespace Agilize
             }
             projectWindow.updateTasks(tasksList);
             this.Close();
-         }
+        }
 
+        /// <summary>
+        /// Comprueba que el text box tenga como nombre Add a description, si es así lo borra para que el usuario pueda escribir.
+        /// Comprueba que el texto no sea Add a description para que pueda funcionar como Hint.
+        /// </summary>
         private void descriptionTxtBox_Enter(object sender, EventArgs e)
         {
             if (descriptionTxtBox.Text == "Add a description")
@@ -266,6 +326,10 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Guarda la decripción de la tarea, sino deja el texto de Add a description para indicar que se ha de poner una descipción
+        /// funciona como un hint.
+        /// </summary>
         private void descriptionTxtBox_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(descriptionTxtBox.Text))

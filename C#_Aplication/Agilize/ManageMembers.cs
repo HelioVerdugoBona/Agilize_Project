@@ -10,7 +10,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Agilize
@@ -23,6 +22,10 @@ namespace Agilize
         String pathToProjectFiles;
         List<Users> totalUsers;
 
+        /// <summary>
+        /// Contructor del form, recibe el path donde estan los archivos del programa, el usuario que ha iniciado sessión.
+        /// y el proyecto en el que estamos.
+        /// </summary>
         public ManageMembers(Users user, String pathToProjectFiles,Projects projects)
         {
             InitializeComponent();
@@ -35,6 +38,15 @@ namespace Agilize
             this.projects = projects;
             this.user = user;
             this.pathToProjectFiles = pathToProjectFiles;
+            setAll();
+
+        }
+
+        /// <summary>
+        /// Settea todo el apartado visual del form
+        /// </summary>
+        private void setAll()
+        {
             setListsBoxs();
             RedondearBoton(retunBTN);
             RedondearBoton(createMemberBtn);
@@ -42,6 +54,9 @@ namespace Agilize
             RedondearBoton(deleteMemberbtn);
         }
 
+        /// <summary>
+        /// Redondea los botones
+        /// </summary>
         private void RedondearBoton(System.Windows.Forms.Button btn)
         {
             var radio = 15;
@@ -56,6 +71,9 @@ namespace Agilize
             btn.Region = new Region(path);
         }
 
+        /// <summary>
+        /// Settea todas las lists boxs con sus contendidos
+        /// </summary>
         private void setListsBoxs()
         {
 
@@ -98,6 +116,9 @@ namespace Agilize
             } 
         }
 
+        /// <summary>
+        /// Crea un nuevo miembro y lo añade al proyecto y a la lista de usuarios de la aplicación (así podran iniciar sessión en la aplicación movil)
+        /// </summary>
         private void createMemberBtn_Click(object sender, EventArgs e)
         {
             if (ValidateNewUser())
@@ -135,6 +156,9 @@ namespace Agilize
            
         }
 
+        /// <summary>
+        /// Añade el miembro seleccionado si el valido al proyecto.
+        /// </summary>
         private void addMemberBtn_Click(object sender, EventArgs e)
         {
             Users addedUsers = (Users)membersofAgilize.SelectedItem;
@@ -150,6 +174,9 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Elimina si es valido al miembro seleccionado del proyecto
+        /// </summary>
         private void deleteMemberbtn_Click(object sender, EventArgs e)
         {
             Users deletedUser = (Users)projectMembers.SelectedItem;
@@ -165,6 +192,10 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Comprueba que el text box tenga como nombre Email, si es así lo borra para que el usuario pueda escribir.
+        /// Comprueba que el texto no sea Email para que pueda funcionar como Hint.
+        /// </summary>
         private void mailTxtBox_Enter(object sender, EventArgs e)
         {
             if (mailTxtBox.Text == "Email")
@@ -174,6 +205,9 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Obtiene el mail del nuevo usuario
+        /// </summary>
         private void mailTxtBox_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(mailTxtBox.Text))
@@ -187,6 +221,10 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Comprueba que el text box tenga como nombre Nickname, si es así lo borra para que el usuario pueda escribir.
+        /// Comprueba que el texto no sea Nickname para que pueda funcionar como Hint.
+        /// </summary>
         private void NicknameTxtBox_Enter(object sender, EventArgs e)
         {
             if (NicknameTxtBox.Text == "Nickname")
@@ -196,6 +234,9 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Obtiene el nickname del nuevo usuario
+        /// </summary>
         private void NicknameTxtBox_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(NicknameTxtBox.Text))
@@ -209,6 +250,9 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Obtiene el mail del nuevo usuario
+        /// </summary>
         private void PaswordTxtBox_Enter(object sender, EventArgs e)
         {
             if (PaswordTxtBox.Text == "Password")
@@ -218,6 +262,9 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Obtiene el password del nuevo usuario
+        /// </summary>
         private void PaswordTxtBox_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(PaswordTxtBox.Text))
@@ -231,12 +278,19 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Vuelve
+        /// </summary>
         private void retunBTN_Click(object sender, EventArgs e)
         {
             saveNewUsers();
             this.Close();
         }
 
+        /// <summary>
+        /// Guarda los nuevos Usuarios en la lista de proyectos, de ser nuevos usuarios o de ser nuevos Usuarios ñadidos
+        /// les guarda el proyecto es su lista personal de proyectos para que puedan acceder en la aplicación movil.
+        /// </summary>
         private void saveNewUsers()
         {
             if (!File.Exists(pathToProjectFiles + "\\Users.json"))
@@ -286,6 +340,10 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Obtiene los usuarios eliminados para luego poder eliminar el proyecto 
+        /// de su lista de proyectos personales a cada uno
+        /// </summary>
         private BindingList<Users> obtainDeletedUsers()
         {
             BindingList <Users> deledUsers = new BindingList<Users>();
@@ -299,6 +357,9 @@ namespace Agilize
             return deledUsers;
         }
 
+        /// <summary>
+        /// Valida que el usuario nuevo no tenga un valor nulo o un espacio en blanco.
+        /// </summary>
         private bool ValidateNewUser()
         {
             return !string.IsNullOrWhiteSpace(newUser.email) &&
@@ -306,6 +367,9 @@ namespace Agilize
                    !string.IsNullOrWhiteSpace(newUser.password);
         }
 
+        /// <summary>
+        /// Encrypta la contraseña usando BlowFish con una clave.
+        /// </summary>
         public string EncryptPassword(string pswd)
         {
             var engine = new BlowfishEngine();

@@ -21,6 +21,9 @@ namespace Agilize
         String newfolderPathTxtBox;
         Users user;
 
+        /// <summary>
+        /// Contructor del form, recibe el path donde estan los archivos del programa y el usuario que ha iniciado sessión.
+        /// </summary>
         public ProjectFolders(Users user,String pathToProjectFiles)
         {
             InitializeComponent();
@@ -29,6 +32,9 @@ namespace Agilize
             RedondearBoton(saveBTN);
         }
 
+        /// <summary>
+        /// Settea todo el apartado visual del form
+        /// </summary>
         private void getAll(Users user, String pathToProjectFiles)
         {
             this.user = user;
@@ -40,6 +46,9 @@ namespace Agilize
 
         }
 
+        /// <summary>
+        /// Settea todos los labels del form
+        /// </summary>
         private void SetAllLbls()
         {
             homeLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
@@ -48,6 +57,9 @@ namespace Agilize
             acountLBL.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
         }
 
+        /// <summary>
+        /// Abre un buscador de archivos.
+        /// </summary>
         private void searchBTN_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folder = new FolderBrowserDialog();
@@ -65,6 +77,10 @@ namespace Agilize
                 Obtainfiles();
             }
         }
+
+        /// <summary>
+        /// Redondea los botones
+        /// </summary>
         private void RedondearBoton(System.Windows.Forms.Button btn)
         {
             var radio = 15;
@@ -78,6 +94,10 @@ namespace Agilize
 
             btn.Region = new Region(path);
         }
+
+        /// <summary>
+        /// Obtiene los subdirectorios
+        /// </summary>
         private void ObtainSubdirectories()
         {
             subDirectories.Clear();
@@ -94,6 +114,9 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Obtiene los ficheros
+        /// </summary>
         private void Obtainfiles()
         {
             files.Clear();
@@ -111,6 +134,9 @@ namespace Agilize
             }
         }
 
+        /// <summary>
+        /// Abre la pestaña de Home
+        /// </summary>
         private void homeLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MainHub mainHub = new MainHub(user, pathToProjectFiles);
@@ -118,6 +144,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de Home
+        /// </summary>
         private void homeIMG_Click(object sender, EventArgs e)
         {
             MainHub mainHub = new MainHub(user, pathToProjectFiles);
@@ -125,6 +154,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de New Project 
+        /// </summary>
         private void newProjectLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             NewProject newProject = new NewProject(user, pathToProjectFiles);
@@ -132,6 +164,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de New Project
+        /// </summary>
         private void newProjectIMG_Click(object sender, EventArgs e)
         {
             NewProject newProject = new NewProject(user, pathToProjectFiles);
@@ -139,6 +174,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de Project Folders (que es esta misma)
+        /// </summary>
         private void projectFoldersLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ProjectFolders projectFolders = new ProjectFolders(user, pathToProjectFiles);
@@ -146,6 +184,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de Project Folders (que es esta misma)
+        /// </summary>
         private void projectFoldersIMG_Click(object sender, EventArgs e)
         {
             ProjectFolders projectFolders = new ProjectFolders(user, pathToProjectFiles);
@@ -153,6 +194,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de Acount
+        /// </summary>
         private void acountLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Acount acount = new Acount(user, pathToProjectFiles);
@@ -160,6 +204,9 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Abre la pestaña de Acount
+        /// </summary>
         private void acountIMG_Click(object sender, EventArgs e)
         {
             Acount acount = new Acount(user, pathToProjectFiles);
@@ -167,19 +214,13 @@ namespace Agilize
             this.Close();
         }
 
+        /// <summary>
+        /// Actualiza el path para los proyectos al nuevo path
+        /// </summary>
         private void saveBTN_Click(object sender, EventArgs e)
         {
             pathToProjectFiles = newfolderPathTxtBox;
         }
 
-        private void calendarIMG_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void calendarLBL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
     }
 }

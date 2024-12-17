@@ -86,8 +86,10 @@ class ProjectWindow: AppCompatActivity()
                     arrayTasks.add(task)
                 }
             }
+
+
             val intent = Intent(this, SumaryActivity::class.java)
-            intent.putExtra(SumaryActivity.TasksStats.STATS,arrayTasks)
+            intent.putParcelableArrayListExtra(SumaryActivity.TasksStats.STATS,ArrayList(arrayTasks))
             startActivity(intent)
         }
     }

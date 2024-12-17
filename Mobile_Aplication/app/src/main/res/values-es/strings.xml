@@ -25,6 +25,15 @@
     <string name="sprint">Sprint</string>
     <string name="estimatedtime">Tiempo Estimado</string>
     <string name="error">Dato de la Tarea</string>
+    <string name="final_time">Tiempo Final</string>
+    <string name="date_endend">Fecha Final</string>
+    <string name="obtener_resumen">Obtener Resumen</string>
+    <string name="ended_tasks">Tareas Terminadas</string>
+    <string name="final_sumary">Resumen</string>
+    <string name="task_final_stats">Datos finales de la tarea</string>
+    <string name="task_final_members">Miembros finales de la tarea</string>
+    <string name="task_final_description">Descripción final de la tarea</string>
+    <string name="search">Buscar</string>
     <string name="user_nickname">Nombre de Usuario</string>
     <string name="user_nickname_account">Nombre de Usuario</string>
     <string name="user_name">Nombre del Usuario</string>
@@ -50,11 +59,8 @@
     <string name="obtaining_projects_error">Ha habido un error al cargar uno o más proyetos</string>
     <string name="saving_projects_error">Ha habido un error al guardar el proyeto</string>
     <string name="updating_task_error">Error al actualizar la tarea</string>
-    <string name="sprint_saving_error">Error al guardar el estado del Sprint</string>
+    <string name="task_saving_error">Error al guardar la tarea</string>
     <string name="confirm_status_password">Comprobar Contraseña</string>
     <string name="password_correlation_null">Introduce un valor valido</string>
     <string name="password_correlation_error">Las dos contraseñas no coinciden</string>
-    <string name="final_time">Final Time</string>
-    <string name="date_endend">Date Endend</string>
-    <string name="obtener_resumen">Obtener Resumen</string>
 </resources>
