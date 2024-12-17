@@ -43,6 +43,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation("com.google.code.gson:gson:2.8.7")
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
     implementation("org.bouncycastle:bcprov-jdk15to18:1.76")
     implementation("androidx.fragment:fragment:1.5.5")
     implementation(libs.firebase.crashlytics.buildtools)
